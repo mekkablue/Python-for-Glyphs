@@ -1,0 +1,25 @@
+<snippet>
+<content><![CDATA[
+${1:from Foundation import *}
+
+def intersectionsBetweenPoints( thisLayer, startPoint, endPoint ):
+	"""
+	Returns list of intersection NSPoints from startPoint to endPoint.
+	thisLayer ... a glyph layer
+	startPoint, endPoint ... NSPoints
+	"""
+	
+	# prepare layer copy for measurement:
+	cleanLayer = thisLayer.copyDecomposedLayer()
+	cleanLayer.removeOverlap()
+	
+	# initiate the measurement tool and measure:
+	measurementTool = NSClassFromString("GlyphsToolMeasurement").alloc().init()
+	returnList = [ NSPoint( p.pointValue().x, p.pointValue().y ) for p in listOfIntersections ]
+	return returnList
+$0
+]]></content>
+<!-- Snippet Name: Glyphs py measurement -->
+<tabTrigger>measurement</tabTrigger>
+<!-- 104B4B66-F24F-4436-A302-444A7B72F1A0 -->
+</snippet>

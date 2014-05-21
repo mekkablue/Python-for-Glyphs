@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>sorted( ${1:[ ${2:[l.parent.name,  l.bounds.origin.y]} for l in selectedLayers]}, key=lambda x: ${3:x[1]} )$0</string>
+	<key>name</key>
+	<string>py sort</string>
+	<key>tabTrigger</key>
+	<string>sort</string>
+	<key>uuid</key>
+	<string>5225E965-C129-4C77-A7FE-C667F7D45566</string>
+</dict>
+</plist>

@@ -1,0 +1,19 @@
+<snippet>
+<content><![CDATA[
+${1:from AppKit import *}
+
+def setClipboard( myText ):
+	"""Sets the contents of the clipboard to myText."""
+	try:
+		myClipboard = NSPasteboard.generalPasteboard()
+		myClipboard.declareTypes_owner_( [NSStringPboardType], None )
+		myClipboard.setString_forType_( myText, NSStringPboardType )
+		return True
+	except Exception as e:
+		return False
+$0
+]]></content>
+<!-- Snippet Name: py clipboard -->
+<tabTrigger>clipboard</tabTrigger>
+<!-- 79CAECE7-25C2-4F7A-A2DD-72152006D94F -->
+</snippet>

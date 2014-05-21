@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>${1:import GlyphsApp
+Font = Glyphs.font
+}
+def create_otclass( classname   = "@default", 
+                    classglyphs = [ x.parent.name for x in Font.selectedLayers ], 
+                    targetfont  = Font ):
+	"""
+	Creates an OpenType class in the font.
+	Default: class @default with currently selected glyphs in the current font.
+	Returns a status message in form of a string.
+	"""
+	
+	# strip '@' from beginning:
+	if classname[0] == "@":
+		classname = classname[1:]
+	
+	classCode = " ".join( classglyphs )
+	
+	if classname in [ c.name for c in targetfont.classes ]:
+		targetfont.classes[classname].code = classCode
+		return "Updated existing OT class '%s'." % classname
+	else:
+		newClass = GSClass()
+		newClass.name = classname
+		newClass.code = classCode
+		targetfont.classes.append( newClass )
+		return "Created new OT class: '%s'" % classname
+
+$0</string>
+	<key>name</key>
+	<string>Glyphs py create ot class</string>
+	<key>tabTrigger</key>
+	<string>otclass</string>
+	<key>uuid</key>
+	<string>E4198030-3DF0-4783-A946-AA926BC6C3C3</string>
+</dict>
+</plist>

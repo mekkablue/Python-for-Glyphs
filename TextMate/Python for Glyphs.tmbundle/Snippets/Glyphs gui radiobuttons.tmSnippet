@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>listOfOptions = [ ${1:"Option 1", "Option 2", "Option 3"} ]
+self.w.${2:radioButtons} = vanilla.RadioGroup( (15, ${3:100}, -15, 20*len(listOfOptions) ), listOfOptions, callback=self.SavePreferences, sizeStyle = 'small' )
+self.w.$2.set( 0 )
+$0</string>
+	<key>name</key>
+	<string>Glyphs gui radiobuttons</string>
+	<key>tabTrigger</key>
+	<string>radio</string>
+	<key>uuid</key>
+	<string>79C8FE42-5BB9-4529-AEA7-6C5A9BDA92AC</string>
+</dict>
+</plist>

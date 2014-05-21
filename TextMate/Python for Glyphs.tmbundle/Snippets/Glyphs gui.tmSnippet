@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>#MenuTitle: ${1:$TM_FILENAME}
+# -*- coding: utf-8 -*-
+"""${2:Create effect for selected glyphs.}"""
+
+import vanilla
+import GlyphsApp
+
+class ${3:${1/ //g}}( object ):
+	def __init__( self ):
+		windowWidth = 350
+		self.w = vanilla.FloatingWindow( (windowWidth, 260), "$1", minSize=(windowWidth, 260), maxSize=(windowWidth, 350), autosaveName="com.mekkablue.$3.mainwindow" )
+
+		self.w.text_1 = vanilla.TextBox( (15-1, 12+2, 75, 14), "Insert", sizeStyle='small' )
+		self.w.popup_1 = vanilla.PopUpButton( (15+40, 12, 50, 17), [str(x) for x in range( 3, 12 )], callback=self.SavePreferences, sizeStyle='small' )
+		self.w.edit_1 = vanilla.EditText( (15+40+50+10, 12, -15, 15+3), "insert text here", sizeStyle = 'small')
+		
+		self.w.runButton = vanilla.Button((-80-15, -20-15, -15, -15), "Run", sizeStyle='regular', callback=self.$4 )
+		self.w.setDefaultButton( self.w.runButton )
+		
+		try:
+			self.LoadPreferences( )
+		except:
+			pass
+		
+		self.w.center()
+		self.w.open()
+		
+	def SavePreferences( self, sender ):
+		try:
+			Glyphs.defaults["com.mekkablue.$3.popup_1"] = self.w.popup_1.get()
+		except:
+			return False
+			
+		return True
+
+	def LoadPreferences( self ):
+		try:
+			self.w.popup_1.set( Glyphs.defaults["com.mekkablue.$3.popup_1"] )
+		except:
+			return False
+			
+		return True
+
+	def ${4:$3Main}( self, sender ):
+		try:
+			$0
+			
+			if not self.SavePreferences( self ):
+				print "Note: could not write preferences."
+			
+			${5:self.w.close()}
+		except Exception, e:
+			raise e
+
+$3()</string>
+	<key>name</key>
+	<string>Glyphs gui</string>
+	<key>tabTrigger</key>
+	<string>gsgui</string>
+	<key>uuid</key>
+	<string>EB1EA211-2FA0-4C31-BBB4-818161C0977A</string>
+</dict>
+</plist>

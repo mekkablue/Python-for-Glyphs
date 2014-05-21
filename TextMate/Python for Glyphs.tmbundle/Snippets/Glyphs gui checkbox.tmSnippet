@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>self.w.${1:myCheckBox} = vanilla.CheckBox( (15, ${2:170}, -15, 20), "${3:Activate option}", value=${4:False}, callback=self.SavePreferences, sizeStyle='small' )
+$0</string>
+	<key>name</key>
+	<string>Glyphs gui checkbox</string>
+	<key>tabTrigger</key>
+	<string>checkbox</string>
+	<key>uuid</key>
+	<string>843CAD52-41F4-4351-B332-477882EAE808</string>
+</dict>
+</plist>

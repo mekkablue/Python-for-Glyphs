@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>${1:from AppKit import *}
+
+def setClipboard( myText ):
+	"""Sets the contents of the clipboard to myText."""
+	try:
+		myClipboard = NSPasteboard.generalPasteboard()
+		myClipboard.declareTypes_owner_( [NSStringPboardType], None )
+		myClipboard.setString_forType_( myText, NSStringPboardType )
+		return True
+	except Exception as e:
+		return False
+$0</string>
+	<key>name</key>
+	<string>py clipboard</string>
+	<key>tabTrigger</key>
+	<string>clipboard</string>
+	<key>uuid</key>
+	<string>79CAECE7-25C2-4F7A-A2DD-72152006D94F</string>
+</dict>
+</plist>

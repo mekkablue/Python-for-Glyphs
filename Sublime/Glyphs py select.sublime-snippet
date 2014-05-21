@@ -1,0 +1,10 @@
+<snippet>
+<content><![CDATA[
+itemsToBeSelected = NSMutableArray.arrayWithObject_( ${1:myObjects} )
+${2:thisLayer}.setSelection_( itemsToBeSelected )
+$0
+]]></content>
+<!-- Snippet Name: Glyphs py select -->
+<tabTrigger>select</tabTrigger>
+<!-- 072B7C68-79BA-4D6C-B063-A4B0EA44EFE2 -->
+</snippet>

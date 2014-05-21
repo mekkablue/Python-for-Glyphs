@@ -1,0 +1,12 @@
+<snippet>
+<content><![CDATA[
+def bezier( x1, y1,  x2,y2,  x3,y3,  x4,y4,  t ):
+	x = x1*(1-t)**3 + x2*3*t*(1-t)**2 + x3*3*t**2*(1-t) + x4*t**3
+	y = y1*(1-t)**3 + y2*3*t*(1-t)**2 + y3*3*t**2*(1-t) + y4*t**3
+
+	return x, y
+]]></content>
+<!-- Snippet Name: py bezier -->
+<tabTrigger>bezier</tabTrigger>
+<!-- A92363FC-E425-419A-8F0B-452C9603E8BC -->
+</snippet>

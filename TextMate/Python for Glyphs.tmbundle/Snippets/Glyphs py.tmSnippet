@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>#MenuTitle: ${1:$TM_FILENAME}
+# -*- coding: utf-8 -*-
+"""${2:Create effect for selected glyphs.}"""
+
+import GlyphsApp
+${3:import random
+random.seed()}
+
+Font = Glyphs.font
+FontMaster = Font.selectedFontMaster
+selectedLayers = Font.selectedLayers
+${4:selection = selectedLayers[0].selection()}
+${5:Doc = Glyphs.currentDocument}
+
+def process( thisLayer ):
+	for thisPath in thisLayer.paths:
+		for thisNode in thisPath.nodes:
+			print thisNode.x, thisNode.y, thisNode.type
+			$0
+
+Font.disableUpdateInterface()
+
+for thisLayer in selectedLayers:
+	thisGlyph = thisLayer.parent
+	print "Processing", thisGlyph.name
+	thisGlyph.beginUndo()	
+	process( thisLayer )
+	thisGlyph.endUndo()
+
+Font.enableUpdateInterface()
+</string>
+	<key>name</key>
+	<string>Glyphs py</string>
+	<key>tabTrigger</key>
+	<string>gspy</string>
+	<key>uuid</key>
+	<string>E578EB41-51AC-4101-8DF3-034F6E9CE6B4</string>
+</dict>
+</plist>

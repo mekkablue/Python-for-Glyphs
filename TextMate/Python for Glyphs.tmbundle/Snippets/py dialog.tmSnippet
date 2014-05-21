@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>class MyDialog:
+  def __init__(self, dialogtitle, dialogquestion, dialoganswer):
+    self.d = Dialog(self)
+    self.d.size = Point(400, 120)
+    self.d.Center()
+    self.d.title = dialogtitle
+    self.d.AddControl(STATICCONTROL, Rect(aIDENT, aIDENT, aIDENT, aIDENT), "frame", STYLE_FRAME) 
+    self.d.AddControl(STATICCONTROL, Rect(aIDENT2, aIDENT2, aAUTO, aAUTO), "label1", STYLE_LABEL, dialogquestion) 
+    self.d.AddControl(EDITCONTROL, Rect(aIDENT2, aNEXT, aIDENT2, aAUTO), "definput", STYLE_EDIT) 
+    self.definput = dialoganswer
+
+  def on_definput( self, code ):
+    self.d.GetValue("definput")
+
+  def on_ok( self, code ):
+    return 1
+
+  def Run( self ):
+    return self.d.Run()
+
+${1:this_dialog} = MyDialog( "${3:Dialog Title}", "${4:Please write your text here:}", "${5:Default Answer}" )
+
+if $1.Run() == 1:
+	${2:dialoganswer} = $1.definput
+	print $2
+	$0
+else:
+	exit()
+
+</string>
+	<key>name</key>
+	<string>py dialog</string>
+	<key>tabTrigger</key>
+	<string>dialog</string>
+	<key>uuid</key>
+	<string>3BFFC51C-6ED3-4FDA-AA0F-12EED4212913</string>
+</dict>
+</plist>

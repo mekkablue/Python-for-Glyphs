@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>${1:import math}
+
+def distance( node1, node2 ):
+	return math.hypot( node1.x - node2.x, node1.y - node2.y )
+$0</string>
+	<key>name</key>
+	<string>Glyphs py distance</string>
+	<key>tabTrigger</key>
+	<string>distance</string>
+	<key>uuid</key>
+	<string>459BCD0B-E20C-4EF8-9768-40F945E24C39</string>
+</dict>
+</plist>

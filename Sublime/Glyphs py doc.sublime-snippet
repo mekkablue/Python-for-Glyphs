@@ -1,0 +1,8 @@
+<snippet>
+<content><![CDATA[
+Doc = Glyphs.currentDocument
+]]></content>
+<!-- Snippet Name: Glyphs py doc -->
+<tabTrigger>doc</tabTrigger>
+<!-- 3AFA040D-8523-4184-89D7-2F5A7611F752 -->
+</snippet>

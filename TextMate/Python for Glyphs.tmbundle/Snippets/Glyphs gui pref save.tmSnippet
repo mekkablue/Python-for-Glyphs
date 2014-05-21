@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>Glyphs.defaults["com.mekkablue.${1:mainClassName}.${2:itemClassName}"] = self.w.$2.get()$0</string>
+	<key>name</key>
+	<string>Glyphs gui pref save</string>
+	<key>tabTrigger</key>
+	<string>prefsave</string>
+	<key>uuid</key>
+	<string>4E5AE413-E026-44AE-B5AC-6169EF6056BC</string>
+</dict>
+</plist>

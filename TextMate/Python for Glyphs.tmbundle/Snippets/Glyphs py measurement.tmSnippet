@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>${1:from Foundation import *}
+
+def intersectionsBetweenPoints( thisLayer, startPoint, endPoint ):
+	"""
+	Returns list of intersection NSPoints from startPoint to endPoint.
+	thisLayer ... a glyph layer
+	startPoint, endPoint ... NSPoints
+	"""
+	
+	# prepare layer copy for measurement:
+	cleanLayer = thisLayer.copyDecomposedLayer()
+	cleanLayer.removeOverlap()
+	
+	# initiate the measurement tool and measure:
+	measurementTool = NSClassFromString("GlyphsToolMeasurement").alloc().init()
+	returnList = [ NSPoint( p.pointValue().x, p.pointValue().y ) for p in listOfIntersections ]
+	return returnList
+$0</string>
+	<key>name</key>
+	<string>Glyphs py measurement</string>
+	<key>tabTrigger</key>
+	<string>measurement</string>
+	<key>uuid</key>
+	<string>104B4B66-F24F-4436-A302-444A7B72F1A0</string>
+</dict>
+</plist>

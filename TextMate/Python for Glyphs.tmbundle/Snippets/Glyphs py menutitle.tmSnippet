@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>#MenuTitle: ${1:$TM_FILENAME}
+# -*- coding: utf-8 -*-
+"""${2:$1}."""
+$0</string>
+	<key>name</key>
+	<string>Glyphs py menutitle</string>
+	<key>tabTrigger</key>
+	<string>title</string>
+	<key>uuid</key>
+	<string>3CCCB797-92CC-4A32-B2C1-53BCB7B595F3</string>
+</dict>
+</plist>

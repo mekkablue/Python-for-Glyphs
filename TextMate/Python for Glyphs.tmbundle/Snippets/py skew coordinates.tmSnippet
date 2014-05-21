@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>${1:import math}
+
+def italicSkew( x, y, angle=10.0, height=0.0 ):
+	"""Skews x/y along the x axis and returns skewed x value. If angle is the italic angle, then height should be half x-height."""
+	
+	new_angle = ( angle / 180.0 ) * math.pi
+	new_x = x + ( y - height ) * math.tan( new_angle )
+	
+	return new_x
+	
+	# [1 tan(angle) 0 1 0 0]
+	# x' = x*a + y*b + e
+	# y' = x*c + y*d + f
+$0</string>
+	<key>name</key>
+	<string>py skew coordinates</string>
+	<key>tabTrigger</key>
+	<string>skew</string>
+	<key>uuid</key>
+	<string>913942A9-F697-420E-82DE-487C2AABFF21</string>
+</dict>
+</plist>

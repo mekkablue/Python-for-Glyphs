@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>itemsToBeSelected = NSMutableArray.arrayWithObject_( ${1:myObjects} )
+${2:thisLayer}.setSelection_( itemsToBeSelected )
+$0</string>
+	<key>name</key>
+	<string>Glyphs py select</string>
+	<key>tabTrigger</key>
+	<string>select</string>
+	<key>uuid</key>
+	<string>072B7C68-79BA-4D6C-B063-A4B0EA44EFE2</string>
+</dict>
+</plist>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>${1:import math}
+
+def angle( firstPoint, secondPoint ):
+	xDiff = firstPoint.x - secondPoint.x
+	yDiff = firstPoint.y - secondPoint.y
+	tangens = yDiff / xDiff
+	angle = math.atan( tangens ) * 180.0 / math.pi
+	return angle
+$0</string>
+	<key>name</key>
+	<string>Glyphs py angle</string>
+	<key>tabTrigger</key>
+	<string>angle</string>
+	<key>uuid</key>
+	<string>041A438A-830E-4E28-96E4-CAC9BC3A0816</string>
+</dict>
+</plist>

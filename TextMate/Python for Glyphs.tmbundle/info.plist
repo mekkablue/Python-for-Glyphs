@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>contactEmailRot13</key>
+	<string>erf ng tylcufncc qbg pbz</string>
+	<key>contactName</key>
+	<string>Rainer Erich Scheichelbauer</string>
+	<key>description</key>
+	<string>Python snippets for Glyphs.app coding.
+http://glyphsapp.com/</string>
+	<key>name</key>
+	<string>Python for Glyphs</string>
+	<key>uuid</key>
+	<string>9A5B7518-7352-4AE4-8CD9-9F16EF3B825D</string>
+</dict>
+</plist>
