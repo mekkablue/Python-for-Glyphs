@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>sorted( ${1:[ ${2:[l.parent.name,  l.bounds.origin.y]} for l in selectedLayers]}, key=lambda x: ${3:x[1]} )$0</string>
+	<string>sorted( ${1:[ ${2:[l.parent.name, l.bounds.origin.y]} for l in selectedLayers]}, key = lambda thisListItem: ${3:thisListItem[1]} )$0</string>
 	<key>name</key>
 	<string>py sort</string>
 	<key>tabTrigger</key>

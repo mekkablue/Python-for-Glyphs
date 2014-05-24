@@ -3,7 +3,8 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>${3:from PyObjCTools.AppHelper import callAfter}
+	<string># opens new Edit tab:
+${3:from PyObjCTools.AppHelper import callAfter}
 callAfter( ${1:Glyphs.currentDocument}.windowController().addTabWithString_, ${2:"abc"} )$0
 </string>
 	<key>name</key>

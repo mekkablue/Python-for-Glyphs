@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>Glyphs.clearLog()$0</string>
+	<string>Glyphs.clearLog() # clears macro window log$0</string>
 	<key>name</key>
 	<string>Glyphs py clear log</string>
 	<key>tabTrigger</key>

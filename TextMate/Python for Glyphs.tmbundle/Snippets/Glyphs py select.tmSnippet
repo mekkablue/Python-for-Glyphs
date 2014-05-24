@@ -3,7 +3,8 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>itemsToBeSelected = NSMutableArray.arrayWithObject_( ${1:myObjects} )
+	<string># selects items on thisLayer:
+itemsToBeSelected = NSMutableArray.arrayWithObject_( ${1:myObjects} )
 ${2:thisLayer}.setSelection_( itemsToBeSelected )
 $0</string>
 	<key>name</key>

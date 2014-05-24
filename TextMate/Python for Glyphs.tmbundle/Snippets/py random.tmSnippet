@@ -3,15 +3,15 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string># brings macro window to front and clears its log:
-Glyphs.clearLog()
-Glyphs.showMacroWindow()
-${1:print "${2:Output}:"}$0</string>
+	<string>import random
+random.seed()
+${1:randomNumber = random.randint( -100, 100 )
+}$0</string>
 	<key>name</key>
-	<string>Glyphs py macro window</string>
+	<string>py random</string>
 	<key>tabTrigger</key>
-	<string>macro</string>
+	<string>random</string>
 	<key>uuid</key>
-	<string>E771FC7C-50E6-4CAA-A906-33A680C1F8E3</string>
+	<string>E2A706E9-ADC6-4265-A39C-E80784BC11BB</string>
 </dict>
 </plist>

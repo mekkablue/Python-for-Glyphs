@@ -3,9 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>self.logToConsole( "${1:mouseDown}: %s" % str(e) )$0</string>
+	<string>self.logToConsole( "${1:method name}: %s" % str(e) )$0</string>
 	<key>name</key>
 	<string>Glyphs plugin log</string>
+	<key>tabTrigger</key>
+	<string>log</string>
 	<key>uuid</key>
 	<string>2EC85DB8-6F40-43A9-BDF6-CD9C37C054CF</string>
 </dict>

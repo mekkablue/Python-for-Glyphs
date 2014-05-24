@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>Doc = Glyphs.currentDocument</string>
+	<string>thisDoc = Glyphs.currentDocument</string>
 	<key>name</key>
 	<string>Glyphs py doc</string>
 	<key>tabTrigger</key>
