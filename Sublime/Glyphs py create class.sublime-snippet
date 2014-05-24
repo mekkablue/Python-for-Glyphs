@@ -1,5 +1,5 @@
 <snippet>
-<content><![CDATA[
+	<content><![CDATA[
 ${1:import GlyphsApp
 Font = Glyphs.font
 }
@@ -30,7 +30,7 @@ def create_otclass( classname   = "@default",
 
 $0
 ]]></content>
-<!-- Snippet Name: Glyphs py create ot class -->
-<tabTrigger>otclass</tabTrigger>
-<!-- E4198030-3DF0-4783-A946-AA926BC6C3C3 -->
+	<description>Glyphs py create ot class</description>
+	<tabTrigger>otclass</tabTrigger>
+	<!-- E4198030-3DF0-4783-A946-AA926BC6C3C3 -->
 </snippet>

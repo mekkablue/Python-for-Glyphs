@@ -3,8 +3,7 @@
 self.w.${1:myCheckBox} = vanilla.CheckBox( (15, ${2:170}, -15, 20), "${3:Activate option}", value=${4:False}, callback=self.SavePreferences, sizeStyle='small' )
 $0
 ]]></content>
-	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<description>Glyphs gui checkbox</description>
 	<tabTrigger>checkbox</tabTrigger>
-	<!-- Optional: Set a scope to limit where the snippet will trigger -->
-	<!-- <scope>source.python</scope> -->
+	<!-- 843CAD52-41F4-4351-B332-477882EAE808 -->
 </snippet>

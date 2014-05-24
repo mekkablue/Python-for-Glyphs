@@ -1,5 +1,5 @@
 <snippet>
-<content><![CDATA[
+	<content><![CDATA[
 ${1:from Foundation import *}
 
 def intersectionsBetweenPoints( thisLayer, startPoint, endPoint ):
@@ -19,7 +19,7 @@ def intersectionsBetweenPoints( thisLayer, startPoint, endPoint ):
 	return returnList
 $0
 ]]></content>
-<!-- Snippet Name: Glyphs py measurement -->
-<tabTrigger>measurement</tabTrigger>
-<!-- 104B4B66-F24F-4436-A302-444A7B72F1A0 -->
+	<description>Glyphs py measurement</description>
+	<tabTrigger>measurement</tabTrigger>
+	<!-- 104B4B66-F24F-4436-A302-444A7B72F1A0 -->
 </snippet>

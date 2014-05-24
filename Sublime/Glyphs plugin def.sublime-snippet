@@ -1,5 +1,5 @@
 <snippet>
-<content><![CDATA[
+	<content><![CDATA[
 def ${1:fname}( ${2:`if [ "$TM_CURRENT_LINE" != "" ]
 				# poor man's way ... check if there is an indent or not
 				# (cuz we would have lost the class scope by this point)
@@ -10,11 +10,9 @@ def ${1:fname}( ${2:`if [ "$TM_CURRENT_LINE" != "" ]
 		${0:pass}
 	except Exception as e:
 		self.logToConsole( "$1: %s" % str(e) )
-		 -->
-</snippet>
-
+		
 ]]></content>
-<!-- Snippet Name: Glyphs plugin def -->
-<tabTrigger>plugindef</tabTrigger>
-<!-- DBB9E029-8E61-4E7F-9FDD-ECEE1097358B -->
+	<description>Glyphs plugin def</description>
+	<tabTrigger>plugindef</tabTrigger>
+	<!-- DBB9E029-8E61-4E7F-9FDD-ECEE1097358B -->
 </snippet>

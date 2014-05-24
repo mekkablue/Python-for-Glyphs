@@ -1,37 +1,40 @@
 <snippet>
-<content><![CDATA[
+	<content><![CDATA[
 #MenuTitle: ${1:$TM_FILENAME}
 # -*- coding: utf-8 -*-
-"""${2:Create effect for selected glyphs.}"""
+__doc__="""
+${2:Create effect for selected glyphs.}
+"""
 
 import GlyphsApp
 ${3:import random
 random.seed()}
 
-Font = Glyphs.font
-FontMaster = Font.selectedFontMaster
-selectedLayers = Font.selectedLayers
-${4:selection = selectedLayers[0].selection()}
-${5:Doc = Glyphs.currentDocument}
+thisFont = Glyphs.font # frontmost font
+thisFontMaster = thisFont.selectedFontMaster # active master
+listOfSelectedLayers = thisFont.selectedLayers # active layers of selected glyphs
+${4:selection = listOfSelectedLayers[0].selection() # node selection in edit mode}
+${5:thisDoc = Glyphs.currentDocument}
 
 def process( thisLayer ):
 	for thisPath in thisLayer.paths:
 		for thisNode in thisPath.nodes:
-			print thisNode.x, thisNode.y, thisNode.type
+			print "-- node %.1f %.1f (type %i)" % thisNode.x, thisNode.y, thisNode.type
 			$0
 
-Font.disableUpdateInterface()
+thisFont.disableUpdateInterface() # suppresses UI updates in Font View
 
-for thisLayer in selectedLayers:
+for thisLayer in listOfSelectedLayers:
 	thisGlyph = thisLayer.parent
 	print "Processing", thisGlyph.name
-	thisGlyph.beginUndo()	
+	thisGlyph.beginUndo() # begin undo grouping
 	process( thisLayer )
-	thisGlyph.endUndo()
+	thisGlyph.endUndo()   # end undo grouping
 
-Font.enableUpdateInterface()
+thisFont.enableUpdateInterface() # re-enables UI updates in Font View
+
 ]]></content>
-<!-- Snippet Name: Glyphs py -->
-<tabTrigger>gspy</tabTrigger>
-<!-- E578EB41-51AC-4101-8DF3-034F6E9CE6B4 -->
+	<description>Glyphs py</description>
+	<tabTrigger>gspy</tabTrigger>
+	<!-- E578EB41-51AC-4101-8DF3-034F6E9CE6B4 -->
 </snippet>

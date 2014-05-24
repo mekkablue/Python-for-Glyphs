@@ -1,5 +1,5 @@
 <snippet>
-<content><![CDATA[
+	<content><![CDATA[
 ${1:import GlyphsApp
 Font = Glyphs.font
 }
@@ -44,7 +44,7 @@ def create_otfeature( featurename = "calt",
 
 $0
 ]]></content>
-<!-- Snippet Name: Glyphs py create ot feature -->
-<tabTrigger>otfeature</tabTrigger>
-<!-- FDD8912B-3BDA-405D-9878-E007520B3A85 -->
+	<description>Glyphs py create ot feature</description>
+	<tabTrigger>otfeature</tabTrigger>
+	<!-- FDD8912B-3BDA-405D-9878-E007520B3A85 -->
 </snippet>

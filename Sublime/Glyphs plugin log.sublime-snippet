@@ -1,7 +1,8 @@
 <snippet>
-<content><![CDATA[
-self.logToConsole( "${1:mouseDown}: %s" % str(e) )$0
+	<content><![CDATA[
+self.logToConsole( "${1:method name}: %s" % str(e) )$0
 ]]></content>
-<!-- Snippet Name: Glyphs plugin log</tabTrigger>
-<!-- 2EC85DB8-6F40-43A9-BDF6-CD9C37C054CF -->
+	<description>Glyphs plugin log</description>
+	<tabTrigger>log</tabTrigger>
+	<!-- 2EC85DB8-6F40-43A9-BDF6-CD9C37C054CF -->
 </snippet>

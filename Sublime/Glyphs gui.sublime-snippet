@@ -1,35 +1,49 @@
 <snippet>
-<content><![CDATA[
+	<content><![CDATA[
 #MenuTitle: ${1:$TM_FILENAME}
 # -*- coding: utf-8 -*-
-"""${2:Create effect for selected glyphs.}"""
+__doc__="""
+${2:Create effect for selected glyphs.}
+"""
 
 import vanilla
 import GlyphsApp
 
 class ${3:${1/ //g}}( object ):
 	def __init__( self ):
-		windowWidth = 350
-		self.w = vanilla.FloatingWindow( (windowWidth, 260), "$1", minSize=(windowWidth, 260), maxSize=(windowWidth, 350), autosaveName="com.mekkablue.$3.mainwindow" )
-
+		# Window 'self.w':
+		windowWidth  = 350
+		windowHeight = 260
+		windowWidthResize  = 100 # user can resize width by this value
+		windowHeightResize = 0   # user can resize height by this value
+		self.w = vanilla.FloatingWindow(
+			( windowWidth, windowHeight ), # default window size
+			"$1", # window title
+			minSize = ( windowWidth, windowHeight ), # minimum size (for resizing)
+			maxSize = ( windowWidth + windowWidthResize, windowHeight + windowHeightResize ), # maximum size (for resizing)
+			autosaveName = "com.${4:mekkablue}.$3.mainwindow" # stores last window position and size
+		)
+		
+		# UI elements:
 		self.w.text_1 = vanilla.TextBox( (15-1, 12+2, 75, 14), "Insert", sizeStyle='small' )
 		self.w.popup_1 = vanilla.PopUpButton( (15+40, 12, 50, 17), [str(x) for x in range( 3, 12 )], callback=self.SavePreferences, sizeStyle='small' )
 		self.w.edit_1 = vanilla.EditText( (15+40+50+10, 12, -15, 15+3), "insert text here", sizeStyle = 'small')
 		
-		self.w.runButton = vanilla.Button((-80-15, -20-15, -15, -15), "Run", sizeStyle='regular', callback=self.$4 )
+		# Run Button:
+		self.w.runButton = vanilla.Button((-80-15, -20-15, -15, -15), "Run", sizeStyle='regular', callback=self.$5 )
 		self.w.setDefaultButton( self.w.runButton )
 		
-		try:
-			self.LoadPreferences( )
-		except:
-			pass
+		# Load Settings:
+		if not self.LoadPreferences():
+			print "Note: '$1' could not load preferences. Will resort to defaults"
 		
-		self.w.center()
+		# Open window and focus on it:
 		self.w.open()
+		self.w.makeKey()
 		
 	def SavePreferences( self, sender ):
 		try:
-			Glyphs.defaults["com.mekkablue.$3.popup_1"] = self.w.popup_1.get()
+			Glyphs.defaults["com.$4.$3.popup_1"] = self.w.popup_1.get()
 		except:
 			return False
 			
@@ -37,28 +51,38 @@ class ${3:${1/ //g}}( object ):
 
 	def LoadPreferences( self ):
 		try:
-			self.w.popup_1.set( Glyphs.defaults["com.mekkablue.$3.popup_1"] )
+			self.w.popup_1.set( Glyphs.defaults["com.$4.$3.popup_1"] )
 		except:
 			return False
 			
 		return True
 
-	def ${4:$3Main}( self, sender ):
+	def ${5:$3Main}( self, sender ):
 		try:
+			${7:thisFont = Glyphs.font # frontmost font
+			listOfSelectedLayers = thisFont.selectedLayers # active layers of currently selected glyphs
+			for thisLayer in listOfSelectedLayers: # loop through layers
+				thisGlyph = thisLayer.parent
+				print thisGlyph.name, thisLayer.name
+				# output all node coordinates:
+				for thisPath in thisLayer.paths:
+					for thisNode in thisLayer.nodes:
+						print "-- %.1f %.1f" % ( thisNode.x, thisNode.y )
+			}
 			$0
 			
 			if not self.SavePreferences( self ):
-				print "Note: could not write preferences."
+				print "Note: '$1' could not write preferences."
 			
-			${5:self.w.close()}
+			${6:self.w.close() # delete if you want window to stay open}
 		except Exception, e:
-			raise e
+			# brings macro window to front and reports error:
+			Glyphs.showMacroWindow()
+			print "$1 Error: %s" % e
 
-$3() -->
-</snippet>
-
+$3()
 ]]></content>
-<!-- Snippet Name: Glyphs gui -->
-<tabTrigger>gsgui</tabTrigger>
-<!-- EB1EA211-2FA0-4C31-BBB4-818161C0977A -->
+	<description>Glyphs gui</description>
+	<tabTrigger>gsgui</tabTrigger>
+	<!-- EB1EA211-2FA0-4C31-BBB4-818161C0977A -->
 </snippet>

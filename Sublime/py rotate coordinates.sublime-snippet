@@ -1,5 +1,5 @@
 <snippet>
-<content><![CDATA[
+	<content><![CDATA[
 ${1:import math
 }
 def rotate( x, y, angle=180.0, x_orig=0.0, y_orig=0.0):
@@ -12,7 +12,7 @@ def rotate( x, y, angle=180.0, x_orig=0.0, y_orig=0.0):
 	return [ new_x, new_y ]
 $0
 ]]></content>
-<!-- Snippet Name: py rotate coordinates -->
-<tabTrigger>rotate</tabTrigger>
-<!-- B6CCABC9-B06A-409F-8911-3E416282B92A -->
+	<description>py rotate coordinates</description>
+	<tabTrigger>rotate</tabTrigger>
+	<!-- B6CCABC9-B06A-409F-8911-3E416282B92A -->
 </snippet>

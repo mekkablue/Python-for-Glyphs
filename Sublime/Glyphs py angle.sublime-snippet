@@ -1,5 +1,5 @@
 <snippet>
-<content><![CDATA[
+	<content><![CDATA[
 ${1:import math}
 
 def angle( firstPoint, secondPoint ):
@@ -10,7 +10,7 @@ def angle( firstPoint, secondPoint ):
 	return angle
 $0
 ]]></content>
-<!-- Snippet Name: Glyphs py angle -->
-<tabTrigger>angle</tabTrigger>
-<!-- 041A438A-830E-4E28-96E4-CAC9BC3A0816 -->
+	<description>Glyphs py angle</description>
+	<tabTrigger>angle</tabTrigger>
+	<!-- 041A438A-830E-4E28-96E4-CAC9BC3A0816 -->
 </snippet>

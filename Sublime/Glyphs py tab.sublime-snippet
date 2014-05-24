@@ -1,9 +1,11 @@
 <snippet>
-<content><![CDATA[
+	<content><![CDATA[
+# opens new Edit tab:
 ${3:from PyObjCTools.AppHelper import callAfter}
 callAfter( ${1:Glyphs.currentDocument}.windowController().addTabWithString_, ${2:"abc"} )$0
+
 ]]></content>
-<!-- Snippet Name: Glyphs py tab -->
-<tabTrigger>tab</tabTrigger>
-<!-- 6362E8C7-4931-4011-8782-B91FC63DFB53 -->
+	<description>Glyphs py tab</description>
+	<tabTrigger>tab</tabTrigger>
+	<!-- 6362E8C7-4931-4011-8782-B91FC63DFB53 -->
 </snippet>

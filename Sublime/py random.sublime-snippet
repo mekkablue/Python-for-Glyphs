@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[
+import random
+random.seed()
+${1:randomNumber = random.randint( -100, 100 )
+}$0
+]]></content>
+	<description>py random</description>
+	<tabTrigger>random</tabTrigger>
+	<!-- E2A706E9-ADC6-4265-A39C-E80784BC11BB -->
+</snippet>

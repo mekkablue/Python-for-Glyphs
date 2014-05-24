@@ -1,10 +1,11 @@
 <snippet>
-<content><![CDATA[
+	<content><![CDATA[
+# brings macro window to front and clears its log:
 Glyphs.clearLog()
 Glyphs.showMacroWindow()
 ${1:print "${2:Output}:"}$0
 ]]></content>
-<!-- Snippet Name: Glyphs py macro window -->
-<tabTrigger>macro</tabTrigger>
-<!-- E771FC7C-50E6-4CAA-A906-33A680C1F8E3 -->
+	<description>Glyphs py macro window</description>
+	<tabTrigger>macro</tabTrigger>
+	<!-- E771FC7C-50E6-4CAA-A906-33A680C1F8E3 -->
 </snippet>

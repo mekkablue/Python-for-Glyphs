@@ -1,5 +1,5 @@
 <snippet>
-<content><![CDATA[
+	<content><![CDATA[
 def intersect( x1, y1, x2, y2, x3, y3, x4, y4 ):
 	"""Calculates the intersection of line P1-P2 with P3-P4."""
 	slope12 = ( float(y2) - float(y1) ) / ( float(x2) - float(x1) )
@@ -9,8 +9,10 @@ def intersect( x1, y1, x2, y2, x3, y3, x4, y4 ):
 	y = slope12 * ( x - x1 ) + y1
 	
 	return x, y
+	
+
 ]]></content>
-<!-- Snippet Name: py intersect -->
-<tabTrigger>intersect</tabTrigger>
-<!-- 73E8D678-EE48-4BA2-B7CC-BDB76113E635 -->
+	<description>py intersect</description>
+	<tabTrigger>intersect</tabTrigger>
+	<!-- 73E8D678-EE48-4BA2-B7CC-BDB76113E635 -->
 </snippet>

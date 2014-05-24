@@ -1,11 +1,12 @@
 <snippet>
-<content><![CDATA[
+	<content><![CDATA[
 ${1:import os}
 terminalCommand = '${2:uptime}'
 terminalCommandResult = os.system( terminalCommand )
 ${3:print terminalCommandResult}$0
+
 ]]></content>
-<!-- Snippet Name: py terminal -->
-<tabTrigger>terminal</tabTrigger>
-<!-- 35EC5588-93F3-4657-AA2D-B5F7D7F667FB -->
+	<description>py terminal</description>
+	<tabTrigger>terminal</tabTrigger>
+	<!-- 35EC5588-93F3-4657-AA2D-B5F7D7F667FB -->
 </snippet>
