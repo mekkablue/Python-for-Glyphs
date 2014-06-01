@@ -30,7 +30,7 @@ class ${3:${1/ //g}}( object ):
 		self.w.edit_1 = vanilla.EditText( (15+40+50+10, 12, -15, 15+3), "insert text here", sizeStyle = 'small')
 		
 		# Run Button:
-		self.w.runButton = vanilla.Button((-80-15, -20-15, -15, -15), "Run", sizeStyle='regular', callback=self.$5 )
+		self.w.runButton = vanilla.Button((-80-15, -20-15, -15, -15), "Run", sizeStyle='regular', callback=self.${5:$3Main} )
 		self.w.setDefaultButton( self.w.runButton )
 		
 		# Load Settings:
