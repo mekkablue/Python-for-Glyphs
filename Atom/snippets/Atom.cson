@@ -1,0 +1,82 @@
+'*':
+  'Glyphs gui checkbox':
+    'prefix': 'checkbox'
+    'body': 'self.w.${1:myCheckBox} = vanilla.CheckBox( (15, ${2:170}, -15, 20), "${3:Activate option}", value=${4:False}, callback=self.SavePreferences, sizeStyle=\'small\' )\n$0'
+  'Glyphs gui pref load':
+    'prefix': 'prefload'
+    'body': 'self.w.${2:itemClassName}.set( Glyphs.defaults["com.mekkablue.${1:mainClassName}.$2"] )$0'
+  'Glyphs gui pref save':
+    'prefix': 'prefsave'
+    'body': 'Glyphs.defaults["com.mekkablue.${1:mainClassName}.${2:itemClassName}"] = self.w.$2.get()$0'
+  'Glyphs gui radiobuttons':
+    'prefix': 'radio'
+    'body': 'listOfOptions = [ ${1:"Option 1", "Option 2", "Option 3"} ]\nself.w.${2:radioButtons} = vanilla.RadioGroup( (15, ${3:100}, -15, 20*len(listOfOptions) ), listOfOptions, callback=self.SavePreferences, sizeStyle = \'small\' )\nself.w.$2.set( 0 )\n$0'
+  'Glyphs gui':
+    'prefix': 'gsgui'
+    'body': '#MenuTitle: ${1:$TM_FILENAME}\n# -*- coding: utf-8 -*-\n__doc__="""\n${2:Create effect for selected glyphs.}\n"""\n\nimport vanilla\nimport GlyphsApp\n\nclass ${3:${1/ //g}}( object ):\n\tdef __init__( self ):\n\t\t# Window \'self.w\':\n\t\twindowWidth  = 350\n\t\twindowHeight = 260\n\t\twindowWidthResize  = 100 # user can resize width by this value\n\t\twindowHeightResize = 0   # user can resize height by this value\n\t\tself.w = vanilla.FloatingWindow(\n\t\t\t( windowWidth, windowHeight ), # default window size\n\t\t\t"$1", # window title\n\t\t\tminSize = ( windowWidth, windowHeight ), # minimum size (for resizing)\n\t\t\tmaxSize = ( windowWidth + windowWidthResize, windowHeight + windowHeightResize ), # maximum size (for resizing)\n\t\t\tautosaveName = "com.${4:mekkablue}.$3.mainwindow" # stores last window position and size\n\t\t)\n\t\t\n\t\t# UI elements:\n\t\tself.w.text_1 = vanilla.TextBox( (15-1, 12+2, 75, 14), "Insert", sizeStyle=\'small\' )\n\t\tself.w.popup_1 = vanilla.PopUpButton( (15+40, 12, 50, 17), [str(x) for x in range( 3, 12 )], callback=self.SavePreferences, sizeStyle=\'small\' )\n\t\tself.w.edit_1 = vanilla.EditText( (15+40+50+10, 12, -15, 15+3), "insert text here", sizeStyle = \'small\')\n\t\t\n\t\t# Run Button:\n\t\tself.w.runButton = vanilla.Button((-80-15, -20-15, -15, -15), "Run", sizeStyle=\'regular\', callback=self.$5 )\n\t\tself.w.setDefaultButton( self.w.runButton )\n\t\t\n\t\t# Load Settings:\n\t\tif not self.LoadPreferences():\n\t\t\tprint "Note: \'$1\' could not load preferences. Will resort to defaults"\n\t\t\n\t\t# Open window and focus on it:\n\t\tself.w.open()\n\t\tself.w.makeKey()\n\t\t\n\tdef SavePreferences( self, sender ):\n\t\ttry:\n\t\t\tGlyphs.defaults["com.$4.$3.popup_1"] = self.w.popup_1.get()\n\t\texcept:\n\t\t\treturn False\n\t\t\t\n\t\treturn True\n\n\tdef LoadPreferences( self ):\n\t\ttry:\n\t\t\tNSUserDefaults.standardUserDefaults().registerDefaults_(\n\t\t\t\t{\n\t\t\t\t\t"com.$4.$3.popup_1": "0"\n\t\t\t\t}\n\t\t\t)\n\t\t\tself.w.popup_1.set( Glyphs.defaults["com.$4.$3.popup_1"] )\n\t\texcept:\n\t\t\treturn False\n\t\t\t\n\t\treturn True\n\n\tdef ${5:$3Main}( self, sender ):\n\t\ttry:\n\t\t\t${7:thisFont = Glyphs.font # frontmost font\n\t\t\tlistOfSelectedLayers = thisFont.selectedLayers # active layers of currently selected glyphs\n\t\t\tfor thisLayer in listOfSelectedLayers: # loop through layers\n\t\t\t\tthisGlyph = thisLayer.parent\n\t\t\t\tprint thisGlyph.name, thisLayer.name\n\t\t\t\t# output all node coordinates:\n\t\t\t\tfor thisPath in thisLayer.paths:\n\t\t\t\t\tfor thisNode in thisLayer.nodes:\n\t\t\t\t\t\tprint "-- %.1f %.1f" % ( thisNode.x, thisNode.y )\n\t\t\t}\n\t\t\t$0\n\t\t\t\n\t\t\tif not self.SavePreferences( self ):\n\t\t\t\tprint "Note: \'$1\' could not write preferences."\n\t\t\t\n\t\t\t${6:self.w.close() # delete if you want window to stay open}\n\t\texcept Exception, e:\n\t\t\t# brings macro window to front and reports error:\n\t\t\tGlyphs.showMacroWindow()\n\t\t\tprint "$1 Error: %s" % e\n\n$3()'
+  'Glyphs plugin def':
+    'prefix': 'plugindef'
+    'body': 'def ${1:fname}( ${2:`if [ "$TM_CURRENT_LINE" != "" ]\n\t\t\t\t# poor man\'s way ... check if there is an indent or not\n\t\t\t\t# (cuz we would have lost the class scope by this point)\n\t\t\t\tthen\n\t\t\t\t\techo "self"\n\t\t\t\tfi`} ):\n\t${3/.+/"""/}${3:docstring for $1}${3/.+/"""\\n/}${3/.+/\\t\\t/}try:\n\t\t${0:pass}\n\texcept Exception as e:\n\t\tself.logToConsole( "$1: %s" % str(e) )\n\t\t'
+  'Glyphs plugin log':
+    'prefix': 'log'
+    'body': 'self.logToConsole( "${1:method name}: %s" % str(e) )$0'
+  'Glyphs py angle':
+    'prefix': 'angle'
+    'body': '${1:import math}\n\ndef angle( firstPoint, secondPoint ):\n\txDiff = firstPoint.x - secondPoint.x\n\tyDiff = firstPoint.y - secondPoint.y\n\ttangens = yDiff / xDiff\n\tangle = math.atan( tangens ) * 180.0 / math.pi\n\treturn angle\n$0'
+  'Glyphs py clear log':
+    'prefix': 'clear'
+    'body': 'Glyphs.clearLog() # clears macro window log$0'
+  'Glyphs py create ot class':
+    'prefix': 'otclass'
+    'body': '${1:import GlyphsApp\nFont = Glyphs.font\n}\ndef create_otclass( classname   = "@default", \n                    classglyphs = [ x.parent.name for x in Font.selectedLayers ], \n                    targetfont  = Font ):\n\t"""\n\tCreates an OpenType class in the font.\n\tDefault: class @default with currently selected glyphs in the current font.\n\tReturns a status message in form of a string.\n\t"""\n\t\n\t# strip \'@\' from beginning:\n\tif classname[0] == "@":\n\t\tclassname = classname[1:]\n\t\n\tclassCode = " ".join( classglyphs )\n\t\n\tif classname in [ c.name for c in targetfont.classes ]:\n\t\ttargetfont.classes[classname].code = classCode\n\t\treturn "Updated existing OT class \'%s\'." % classname\n\telse:\n\t\tnewClass = GSClass()\n\t\tnewClass.name = classname\n\t\tnewClass.code = classCode\n\t\ttargetfont.classes.append( newClass )\n\t\treturn "Created new OT class: \'%s\'" % classname\n\n$0'
+  'Glyphs py create ot feature':
+    'prefix': 'otfeature'
+    'body': '${1:import GlyphsApp\nFont = Glyphs.font\n}\ndef updated_code( oldcode, beginsig, endsig, newcode ):\n\t"""Replaces text in oldcode with newcode, but only between beginsig and endsig."""\n\tbegin_offset = oldcode.find( beginsig )\n\tend_offset   = oldcode.find( endsig ) + len( endsig )\n\tnewcode = oldcode[:begin_offset] + beginsig + newcode + "\\n" + endsig + oldcode[end_offset:]\n\treturn newcode\n\ndef create_otfeature( featurename = "calt", \n                      featurecode = "# empty feature code", \n                      targetfont  = Font,\n                      codesig     = "DEFAULT-CODE-SIGNATURE" ):\n\t"""\n\tCreates or updates an OpenType feature in the font.\n\tReturns a status message in form of a string.\n\t"""\n\t\n\tbeginSig = "# BEGIN " + codesig + "\\n"\n\tendSig   = "# END "   + codesig + "\\n"\n\t\n\tif featurename in [ f.name for f in targetfont.features ]:\n\t\t# feature already exists:\n\t\ttargetfeature = targetfont.features[ featurename ]\n\t\t\n\t\tif beginSig in targetfeature.code:\n\t\t\t# replace old code with new code:\n\t\t\ttargetfeature.code = updated_code( targetfeature.code, beginSig, endSig, featurecode )\n\t\telse:\n\t\t\t# append new code:\n\t\t\ttargetfeature.code += "\\n" + beginSig + featurecode + "\\n" + endSig\n\t\t\t\n\t\treturn "Updated existing OT feature \'%s\'." % featurename\n\telse:\n\t\t# create feature with new code:\n\t\tnewFeature = GSFeature()\n\t\tnewFeature.name = featurename\n\t\tnewFeature.code = beginSig + featurecode + "\\n" + endSig\n\t\ttargetfont.features.append( newFeature )\n\t\treturn "Created new OT feature \'%s\'" % featurename\n\n$0'
+  'Glyphs py distance':
+    'prefix': 'distance'
+    'body': '${1:import math}\n\ndef distance( node1, node2 ):\n\treturn math.hypot( node1.x - node2.x, node1.y - node2.y )\n$0'
+  'Glyphs py doc':
+    'prefix': 'doc'
+    'body': 'thisDoc = Glyphs.currentDocument'
+  'Glyphs py macro window':
+    'prefix': 'macro'
+    'body': '# brings macro window to front and clears its log:\nGlyphs.clearLog()\nGlyphs.showMacroWindow()\n${1:print "${2:Output}:"}$0'
+  'Glyphs py measurement':
+    'prefix': 'measurement'
+    'body': '${1:from Foundation import *}\n\ndef intersectionsBetweenPoints( thisLayer, startPoint, endPoint ):\n\t"""\n\tReturns list of intersection NSPoints from startPoint to endPoint.\n\tthisLayer ... a glyph layer\n\tstartPoint, endPoint ... NSPoints\n\t"""\n\t\n\t# prepare layer copy for measurement:\n\tcleanLayer = thisLayer.copyDecomposedLayer()\n\tcleanLayer.removeOverlap()\n\t\n\t# initiate the measurement tool and measure:\n\tmeasurementTool = NSClassFromString("GlyphsToolMeasurement").alloc().init()\n\treturnList = [ NSPoint( p.pointValue().x, p.pointValue().y ) for p in listOfIntersections ]\n\treturn returnList\n$0'
+  'Glyphs py menutitle':
+    'prefix': 'title'
+    'body': '#MenuTitle: ${1:$TM_FILENAME}\n# -*- coding: utf-8 -*-\n__doc__="""\n${2:$1}.\n"""\n$0'
+  'Glyphs py select':
+    'prefix': 'select'
+    'body': '# selects items on thisLayer:\nitemsToBeSelected = NSMutableArray.arrayWithObject_( ${1:myObjects} )\n${2:thisLayer}.setSelection_( itemsToBeSelected )\n$0'
+  'Glyphs py tab':
+    'prefix': 'tab'
+    'body': '# opens new Edit tab:\n${3:from PyObjCTools.AppHelper import callAfter}\ncallAfter( ${1:Glyphs.currentDocument}.windowController().addTabWithString_, ${2:"abc"} )$0\n'
+  'Glyphs py':
+    'prefix': 'gspy'
+    'body': '#MenuTitle: ${1:$TM_FILENAME}\n# -*- coding: utf-8 -*-\n__doc__="""\n${2:Create effect for selected glyphs.}\n"""\n\nimport GlyphsApp\n${3:import random\nrandom.seed()}\n\nthisFont = Glyphs.font # frontmost font\nthisFontMaster = thisFont.selectedFontMaster # active master\nlistOfSelectedLayers = thisFont.selectedLayers # active layers of selected glyphs\n${4:selection = listOfSelectedLayers[0].selection() # node selection in edit mode}\n${5:thisDoc = Glyphs.currentDocument}\n\ndef process( thisLayer ):\n\tfor thisPath in thisLayer.paths:\n\t\tfor thisNode in thisPath.nodes:\n\t\t\tprint "-- node %.1f %.1f (type %i)" % ( thisNode.x, thisNode.y, thisNode.type )\n\t\t\t$0\n\nthisFont.disableUpdateInterface() # suppresses UI updates in Font View\n\nfor thisLayer in listOfSelectedLayers:\n\tthisGlyph = thisLayer.parent\n\tprint "Processing", thisGlyph.name\n\tthisGlyph.beginUndo() # begin undo grouping\n\tprocess( thisLayer )\n\tthisGlyph.endUndo()   # end undo grouping\n\nthisFont.enableUpdateInterface() # re-enables UI updates in Font View\n'
+  'py bezier':
+    'prefix': 'bezier'
+    'body': 'def bezier( x1,y1,  x2,y2,  x3,y3,  x4,y4,  t ):\n\t"""\n\tReturns coordinates for t (=0.0...1.0) on curve segment.\n\tx1,y1 and x4,y4: coordinates of on-curve nodes\n\tx2,y2 and x3,y3: coordinates of BCPs\n\t"""\n\tx = x1*(1-t)**3 + x2*3*t*(1-t)**2 + x3*3*t**2*(1-t) + x4*t**3\n\ty = y1*(1-t)**3 + y2*3*t*(1-t)**2 + y3*3*t**2*(1-t) + y4*t**3\n\n\treturn x, y\n'
+  'py clipboard':
+    'prefix': 'clipboard'
+    'body': '${1:from AppKit import *}\n\ndef setClipboard( myText ):\n\t"""\n\tSets the contents of the clipboard to myText.\n\tReturns True if successful, False if unsuccessful.\n\t"""\n\ttry:\n\t\tmyClipboard = NSPasteboard.generalPasteboard()\n\t\tmyClipboard.declareTypes_owner_( [NSStringPboardType], None )\n\t\tmyClipboard.setString_forType_( myText, NSStringPboardType )\n\t\treturn True\n\texcept Exception as e:\n\t\treturn False\n\n${2:if not setClipboard(${3:"clipboard text"}):\n\tprint "Warning: could not set clipboard to %s" % ( $3 )}\n$0'
+  'py intersect':
+    'prefix': 'intersect'
+    'body': 'def intersect( x1, y1, x2, y2, x3, y3, x4, y4 ):\n\t"""Calculates the intersection of line P1-P2 with P3-P4."""\n\tslope12 = ( float(y2) - float(y1) ) / ( float(x2) - float(x1) )\n\tslope34 = ( float(y4) - float(y3) ) / ( float(x4) - float(x3) )\n\t\n\tx = ( slope12 * x1 - y1 - slope34 * x3 + y3 ) / ( slope12 - slope34 )\n\ty = slope12 * ( x - x1 ) + y1\n\t\n\treturn x, y\n\t\n'
+  'py random':
+    'prefix': 'random'
+    'body': 'import random\nrandom.seed()\n${1:randomNumber = random.randint( -100, 100 )\n}$0'
+  'py rotate coordinates':
+    'prefix': 'rotate'
+    'body': '${1:import math\n}\ndef rotate( x, y, angle=180.0, x_orig=0.0, y_orig=0.0):\n\t"""Rotates x/y around x_orig/y_orig by angle and returns result as [x,y]."""\n\t\n\tnew_angle = ( angle / 180.0 ) * math.pi\n\tnew_x = ( x - x_orig ) * math.cos( new_angle ) - ( y - y_orig ) * math.sin( new_angle ) + x_orig\n\tnew_y = ( x - x_orig ) * math.sin( new_angle ) + ( y - y_orig ) * math.cos( new_angle ) + y_orig\n\t\n\treturn [ new_x, new_y ]\n$0'
+  'py skew coordinates':
+    'prefix': 'skew'
+    'body': '${1:import math}\n\ndef italicSkew( x, y, angle=10.0, height=0.0 ):\n\t"""Skews x/y along the x axis and returns skewed x value. If angle is the italic angle, then height should be half x-height."""\n\t\n\tnew_angle = ( angle / 180.0 ) * math.pi\n\tnew_x = x + ( y - height ) * math.tan( new_angle )\n\t\n\treturn new_x\n\t\n\t# [1 tan(angle) 0 1 0 0]\n\t# x\' = x*a + y*b + e\n\t# y\' = x*c + y*d + f\n$0'
+  'py sort':
+    'prefix': 'sort'
+    'body': 'sorted( ${1:[ ${2:[l.parent.name, l.bounds.origin.y]} for l in selectedLayers]}, key = lambda thisListItem: ${3:thisListItem[1]} )$0'
+  'py terminal':
+    'prefix': 'terminal'
+    'body': '${1:import os}\nterminalCommand = \'${2:uptime}\'\nterminalCommandResult = os.system( terminalCommand )\n${3:print terminalCommandResult}$0\n'

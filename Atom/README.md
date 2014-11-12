@@ -2,15 +2,9 @@
 
 These are text editor snippets intended to facilitate Python development for Glyphs.app. Have fun.
 
-### Installation
-
-* TextMate bundle: double click to install
-* Sublime Text 2 snippets: move to `~/Library/Application Support/Sublime Text 2/Packages/User/`
-* Atom: move to `~/.atom/packages/python-to-glyphs`
-
 ### License
 
-Copyright 2014 Rainer Erich Scheichelbauer (@mekkablue).
+Copyright 2014 Rainer Erich Scheichelbauer (@mekkablue).<br/>
 Some code by Georg Seifert (@schriftgestalt).
 
 Licensed under the Apache License, Version 2.0 (the "License");
