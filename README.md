@@ -11,7 +11,7 @@ These are text editor snippets intended to facilitate Python development for Gly
 ### License
 
 Copyright 2014 Rainer Erich Scheichelbauer (@mekkablue).
-Some code by Georg Seifert (@schriftgestalt).
+Some code by Georg Seifert (@schriftgestalt). Atom adaptation by Kenneth Ormandy (@kennethormandy).
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
