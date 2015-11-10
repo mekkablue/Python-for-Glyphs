@@ -1,8 +1,6 @@
 <snippet>
-	<content><![CDATA[
-# opens new Edit tab:
-${3:from PyObjCTools.AppHelper import callAfter}
-callAfter( ${1:Glyphs.currentDocument}.windowController().addTabWithString_, ${2:"abc"} )$0
+	<content><![CDATA[# opens new Edit tab:
+${1:thisFont}.newTab( ${2:"abc"} )$0
 
 ]]></content>
 	<description>Glyphs py tab</description>

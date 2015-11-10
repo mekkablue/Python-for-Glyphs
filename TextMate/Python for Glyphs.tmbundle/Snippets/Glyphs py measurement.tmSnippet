@@ -3,9 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>${1:from Foundation import *}
-
-def intersectionsBetweenPoints( thisLayer, startPoint, endPoint ):
+	<string>def intersectionsBetweenPoints( thisLayer, startPoint, endPoint ):
 	"""
 	Returns list of intersection NSPoints from startPoint to endPoint.
 	thisLayer ... a glyph layer
@@ -16,10 +14,9 @@ def intersectionsBetweenPoints( thisLayer, startPoint, endPoint ):
 	cleanLayer = thisLayer.copyDecomposedLayer()
 	cleanLayer.removeOverlap()
 	
-	# initiate the measurement tool and measure:
-	measurementTool = NSClassFromString("GlyphsToolMeasurement").alloc().init()
-	returnList = [ NSPoint( p.pointValue().x, p.pointValue().y ) for p in listOfIntersections ]
-	return returnList
+	# measure and return tuple:
+	intersections = cleanLayer.intersectionsBetweenPoints( startPoint, endPoint )
+	return tuple(p.pointValue() for p in intersections)
 $0</string>
 	<key>name</key>
 	<string>Glyphs py measurement</string>

@@ -13,8 +13,8 @@ random.seed()}
 thisFont = Glyphs.font # frontmost font
 thisFontMaster = thisFont.selectedFontMaster # active master
 listOfSelectedLayers = thisFont.selectedLayers # active layers of selected glyphs
-${4:selection = listOfSelectedLayers[0].selection() # node selection in edit mode}
-${5:thisDoc = Glyphs.currentDocument}
+${4:selection = listOfSelectedLayers[0].selection # node selection in edit mode}
+${5:thisDoc = Glyphs.currentDocument # the frontmost document}
 
 def process( thisLayer ):
 	for thisPath in thisLayer.paths:

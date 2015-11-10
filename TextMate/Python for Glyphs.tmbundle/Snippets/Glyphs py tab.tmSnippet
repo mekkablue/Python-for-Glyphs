@@ -4,8 +4,7 @@
 <dict>
 	<key>content</key>
 	<string># opens new Edit tab:
-${3:from PyObjCTools.AppHelper import callAfter}
-callAfter( ${1:Glyphs.currentDocument}.windowController().addTabWithString_, ${2:"abc"} )$0
+${1:thisFont}.newTab( ${2:"abc"} )$0
 </string>
 	<key>name</key>
 	<string>Glyphs py tab</string>
