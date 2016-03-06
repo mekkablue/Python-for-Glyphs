@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>https://raw.githubusercontent.com/${1:github username}/${2:plugin name}/master/$2.${3|glyphsReporter,glyphsFilter,glyphsTool,glyphsFileFormat,glyphsPlugin,glyphsPalette|}/Contents/Info.plist$0</string>
+	<key>name</key>
+	<string>Info updateFeedURL</string>
+	<key>tabTrigger</key>
+	<string>infoupdate</string>
+	<key>uuid</key>
+	<string>2A905466-09E0-429D-BD01-268964BFABCD</string>
+</dict>
+</plist>

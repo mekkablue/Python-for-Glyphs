@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>def offsetLayer( thisLayer, offset, makeStroke=False, position=0.5, autoStroke=False ):
+	offsetFilter = NSClassFromString("GlyphsFilterOffsetCurve")
+	offsetFilter.offsetLayer_offsetX_offsetY_makeStroke_autoStroke_position_error_shadow_(
+		thisLayer,
+		offset, offset, # horizontal and vertical offset
+		makeStroke,     # if True, creates a stroke
+		autoStroke,     # if True, distorts resulting shape to vertical metrics
+		position,       # stroke distribution to the left and right, 0.5 = middle
+		None, None )
+$0</string>
+	<key>name</key>
+	<string>Glyphs py layer offset</string>
+	<key>tabTrigger</key>
+	<string>offset</string>
+	<key>uuid</key>
+	<string>A8D22845-230E-493A-AE0C-6D0B4CF10BAD</string>
+</dict>
+</plist>

@@ -15,8 +15,8 @@
 	cleanLayer.removeOverlap()
 	
 	# measure and return tuple:
-	intersections = cleanLayer.intersectionsBetweenPoints( startPoint, endPoint )
-	return tuple(p.pointValue() for p in intersections)
+	listOfIntersections = cleanLayer.intersectionsBetweenPoints( startPoint, endPoint )
+	return listOfIntersections
 $0</string>
 	<key>name</key>
 	<string>Glyphs py measurement</string>

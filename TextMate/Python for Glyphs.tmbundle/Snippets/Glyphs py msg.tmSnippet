@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>Message("${1:Script} Error", "${2:An error occurred during the execution of the script.}", OKButton=${3|None,"Apply"|})$0</string>
+	<key>name</key>
+	<string>Glyphs py msg</string>
+	<key>tabTrigger</key>
+	<string>msg</string>
+	<key>uuid</key>
+	<string>4982A23A-493D-4FFA-8036-8CFBC6CB2548</string>
+</dict>
+</plist>
