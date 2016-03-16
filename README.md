@@ -1,6 +1,6 @@
 # Python development for Glyphs.app
 
-These are text editor snippets intended to facilitate Python development for Glyphs.app. Have fun.
+These are text editor snippets intended to facilitate Python development for Glyphs.app. Have fun. Since I use TextMate myself, the TextMate snippets can safely be assumed to be up to date most of the time. I occasionally take the time to update the Sublime Text snippets. Since I don’t use Atom, I depend on other people’s pull requests. Hence, the Atom snippets are usually out of date. If you want up-to-date snippets for Sublime Text or Atom, feel free to contribute to this repository on a regular basis.
 
 ### Installation
 
