@@ -6,11 +6,14 @@
 	<string>${1:import math}
 
 def angle( firstPoint, secondPoint ):
-	xDiff = firstPoint.x - secondPoint.x
-	yDiff = firstPoint.y - secondPoint.y
-	tangens = yDiff / xDiff
-	angle = math.atan( tangens ) * 180.0 / math.pi
-	return angle
+	"""
+	Returns the angle (in degrees) of the straight line between firstPoint and secondPoint,
+	0 degrees being the second point to the right of first point.
+	firstPoint, secondPoint: must be NSPoint or GSNode
+	"""
+	xDiff = secondPoint.x - firstPoint.x
+	yDiff = secondPoint.y - firstPoint.y
+	return math.degrees(math.atan2(yDiff,xDiff))
 $0</string>
 	<key>name</key>
 	<string>Glyphs py angle</string>
