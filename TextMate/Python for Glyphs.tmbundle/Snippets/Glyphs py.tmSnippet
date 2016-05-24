@@ -11,13 +11,12 @@ ${2:Create effect for selected glyphs.}
 
 import GlyphsApp
 ${3:import random
-random.seed()}
-
+random.seed()
+}
 thisFont = Glyphs.font # frontmost font
 thisFontMaster = thisFont.selectedFontMaster # active master
 listOfSelectedLayers = thisFont.selectedLayers # active layers of selected glyphs
 ${4:selection = listOfSelectedLayers[0].selection # node selection in edit mode}
-${5:thisDoc = Glyphs.currentDocument # the frontmost document}
 
 def process( thisLayer ):
 	for thisPath in thisLayer.paths:
@@ -29,7 +28,7 @@ thisFont.disableUpdateInterface() # suppresses UI updates in Font View
 
 for thisLayer in listOfSelectedLayers:
 	thisGlyph = thisLayer.parent
-	print "Processing", thisGlyph.name
+	print "Processing %s" % thisGlyph.name
 	thisGlyph.beginUndo() # begin undo grouping
 	process( thisLayer )
 	thisGlyph.endUndo()   # end undo grouping

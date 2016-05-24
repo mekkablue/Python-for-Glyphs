@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>def circlePath( center=NSPoint(0,0), radius=50, bcp=4.0*(2.0**0.5-1.0)/3.0 ):
+	circle = GSPath()
+	x = center.x
+	y = center.y
+	handle = radius*bcp
+	points=(
+		((x+handle, y-radius), (x+radius, y-handle), (x+radius, y)),
+		((x+radius, y+handle), (x+handle, y+radius), (x, y+radius)),
+		((x-handle, y+radius), (x-radius, y+handle), (x-radius, y)),
+		((x-radius, y-handle), (x-handle, y-radius), (x, y-radius))
+	)
+	# Add the segments:
+	for triplet in points:
+		# Add the two BCPs of the segment:
+		bcp1 = NSPoint( triplet[0][0], triplet[0][1] )
+		bcp2 = NSPoint( triplet[1][0], triplet[1][1] )
+		for bcpPosition in (bcp1,bcp2):
+			newBCP = GSNode()
+			newBCP.type = OFFCURVE
+			newBCP.position = bcpPosition
+			circle.addNode_(newBCP)
+		
+		# Add the On-Curve of the segment:
+		newCurvepoint = GSNode()
+		newCurvepoint.type = CURVE
+		newCurvepoint.position  = NSPoint( triplet[2][0], triplet[2][1] )
+		circle.addNode_(newCurvepoint)
+		
+	circle.closed = True
+	return circle
+$0</string>
+	<key>name</key>
+	<string>Glyphs py circle</string>
+	<key>tabTrigger</key>
+	<string>circle</string>
+	<key>uuid</key>
+	<string>C9BB77B6-FB1C-48FE-A5C4-522F07D761FC</string>
+</dict>
+</plist>

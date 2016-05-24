@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>${1:import traceback
+}${2:print }traceback.format_exc()$0</string>
+	<key>name</key>
+	<string>py traceback</string>
+	<key>tabTrigger</key>
+	<string>trace</string>
+	<key>uuid</key>
+	<string>2C753F76-767A-45FD-90D0-42C68659B23D</string>
+</dict>
+</plist>
