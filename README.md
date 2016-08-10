@@ -12,7 +12,6 @@ These are text editor snippets intended to facilitate Python development for Gly
 * `circle⇥` Function returning a GSPath containing a circle.
 * `otclass⇥` Function that creates or (if it already exists) updates an OpenType class.
 * `otfeature⇥` Function that creates or (if it already exists) updates an OpenType feature.
-* `doc⇥` Asks for current document and stores it in variable *thisDoc*.
 * `italic⇥` Function that returns a point position that respects an italic angle.
 * `offset⇥` Function that offsets a GSLayer.
 * `round⇥` Function that rounds the corners of a GSLayer.
