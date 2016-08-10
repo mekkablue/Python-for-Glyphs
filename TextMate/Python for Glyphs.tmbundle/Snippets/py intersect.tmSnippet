@@ -3,17 +3,42 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>def intersect( x1, y1, x2, y2, x3, y3, x4, y4 ):
-	"""Calculates the intersection of line P1-P2 with P3-P4."""
-	slope12 = ( float(y2) - float(y1) ) / ( float(x2) - float(x1) )
-	slope34 = ( float(y4) - float(y3) ) / ( float(x4) - float(x3) )
+	<string>def intersect( pointA, pointB, pointC, pointD ):
+	"""
+	Returns an NSPoint of the intersection AB with CD,
+	or None if there is no intersection.
+	pointA, pointB: NSPoints or GSNodes representing the first line AB,
+	pointC, pointD: NSPoints or GSNodes representing the second line CD.
+	"""
+	xA, yA = pointA.x, pointA.y
+	xB, yB = pointB.x, pointB.y
+	xC, yC = pointC.x, pointC.y
+	xD, yD = pointD.x, pointD.y
 	
-	x = ( slope12 * x1 - y1 - slope34 * x3 + y3 ) / ( slope12 - slope34 )
-	y = slope12 * ( x - x1 ) + y1
+	try:
+		slopeAB = ( float(yB) - float(yA) ) / ( float(xB) - float(xA) )
+	except:
+		slopeAB = None # division by zero if vertical
 	
-	return x, y
+	try:
+		slopeCD = ( float(yD) - float(yC) ) / ( float(xD) - float(xC) )
+	except:
+		slopeCD = None # division by zero if vertical
 	
-</string>
+	if slopeAB == slopeCD: # parallel, no intersection
+		return None
+	elif slopeAB is None: # first line is vertical
+		x = xA
+		y = slopeCD * ( x - xC ) + yC
+	elif slopeCD is None: # second line is vertical
+		x = xC
+		y = slopeAB * ( x - xA ) + yA
+	else: # both lines have different angles other than vertical
+		x = ( slopeAB * xA - yA - slopeCD * xC + yC ) / ( slopeAB - slopeCD )
+		y = slopeAB * ( x - xA ) + yA
+		
+	return NSPoint( x, y )
+$0</string>
 	<key>name</key>
 	<string>py intersect</string>
 	<key>tabTrigger</key>

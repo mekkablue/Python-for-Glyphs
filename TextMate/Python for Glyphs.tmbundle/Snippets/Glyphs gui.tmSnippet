@@ -10,7 +10,6 @@ ${2:Create effect for selected glyphs.}
 """
 
 import vanilla
-import GlyphsApp
 
 class ${3:${1/ //g}}( object ):
 	def __init__( self ):

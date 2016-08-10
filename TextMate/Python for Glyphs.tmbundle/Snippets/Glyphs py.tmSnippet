@@ -8,25 +8,32 @@
 __doc__="""
 ${2:Create effect for selected glyphs.}
 """
-
-import GlyphsApp
-${3:import random
+${3:
+import random
 random.seed()
 }
 thisFont = Glyphs.font # frontmost font
-thisFontMaster = thisFont.selectedFontMaster # active master
-listOfSelectedLayers = thisFont.selectedLayers # active layers of selected glyphs
-${4:selection = listOfSelectedLayers[0].selection # node selection in edit mode}
-
+${4:thisFontMaster = thisFont.selectedFontMaster # active master
+}selectedLayers = thisFont.selectedLayers # active layers of selected glyphs
+${5:selection = selectedLayers[0].selection # node selection in edit mode
+}
 def process( thisLayer ):
 	for thisPath in thisLayer.paths:
+		if thisPath.closed:
+			print "- closed path:"
+		else:
+			print "- open path:"
 		for thisNode in thisPath.nodes:
 			print "-- node %.1f %.1f (type %i)" % ( thisNode.x, thisNode.y, thisNode.type )
-			$0
+	for thisComponent in thisLayer.components:
+		print "- component %s at %.1f %.1f" % ( thisComponent.componentName, thisComponent.position.x, thisComponent.position.y )
+	for thisAnchor in thisLayer.anchors:
+		print "- anchor %s at %.1f %.1f" % ( thisAnchor.name, thisAnchor.x, thisAnchor.y )
+	$0
 
 thisFont.disableUpdateInterface() # suppresses UI updates in Font View
 
-for thisLayer in listOfSelectedLayers:
+for thisLayer in selectedLayers:
 	thisGlyph = thisLayer.parent
 	print "Processing %s" % thisGlyph.name
 	thisGlyph.beginUndo() # begin undo grouping
