@@ -37,6 +37,7 @@ These are text editor snippets intended to facilitate Python development for Gly
 
 #### Plugin SDK-specific snippets
 
+* `rgb⇥` NSColor object with RGB definition.
 * `plugindef⇥` Function definition structure suited for the Plugin SDK.
 * `log⇥` Log a message to the console.
 * `infoproduct⇥` Prefill the *productPageURL* entry of a plugin’s *Info.plist* with a GitHub URL.
