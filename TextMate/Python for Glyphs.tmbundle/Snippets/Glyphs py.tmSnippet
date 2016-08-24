@@ -24,7 +24,7 @@ def process( thisLayer ):
 		else:
 			print "- open path:"
 		for thisNode in thisPath.nodes:
-			print "-- node %.1f %.1f (type %i)" % ( thisNode.x, thisNode.y, thisNode.type )
+			print "-- node %.1f %.1f (type %s)" % ( thisNode.x, thisNode.y, thisNode.type )
 	for thisComponent in thisLayer.components:
 		print "- component %s at %.1f %.1f" % ( thisComponent.componentName, thisComponent.position.x, thisComponent.position.y )
 	for thisAnchor in thisLayer.anchors:
