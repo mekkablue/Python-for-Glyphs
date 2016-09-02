@@ -1,9 +1,0 @@
-<snippet>
-	<content><![CDATA[
-self.w.${1:myCheckBox} = vanilla.CheckBox( (15, ${2:170}, -15, 20), "${3:Activate option}", value=${4:False}, callback=self.SavePreferences, sizeStyle='small' )
-$0
-]]></content>
-	<description>Glyphs gui checkbox</description>
-	<tabTrigger>checkbox</tabTrigger>
-	<!-- 843CAD52-41F4-4351-B332-477882EAE808 -->
-</snippet>

@@ -1,8 +1,0 @@
-<snippet>
-	<content><![CDATA[
-Glyphs.defaults["com.mekkablue.${1:mainClassName}.${2:itemClassName}"] = self.w.$2.get()$0
-]]></content>
-	<description>Glyphs gui pref save</description>
-	<tabTrigger>prefsave</tabTrigger>
-	<!-- 4E5AE413-E026-44AE-B5AC-6169EF6056BC -->
-</snippet>

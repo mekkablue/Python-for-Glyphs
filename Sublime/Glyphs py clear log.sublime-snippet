@@ -1,8 +1,0 @@
-<snippet>
-	<content><![CDATA[
-Glyphs.clearLog() # clears macro window log$0
-]]></content>
-	<description>Glyphs py clear log</description>
-	<tabTrigger>clear</tabTrigger>
-	<!-- 3DC14F55-B90A-4E03-B97C-96BCD61857CC -->
-</snippet>

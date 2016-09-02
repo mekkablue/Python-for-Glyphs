@@ -3,9 +3,10 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>${1:import os}
-terminalCommand = '${2:uptime}'
-terminalCommandResult = os.system( terminalCommand )
+	<string>${1:import subprocess}
+cmd = '${2:uptime}'
+cmdArgs = [] # arguments (may contain spaces) as lists of strings
+terminalCommandResult = subprocess.check_output( cmd.split(" ")+cmdArgs )
 ${3:print terminalCommandResult}$0
 </string>
 	<key>name</key>

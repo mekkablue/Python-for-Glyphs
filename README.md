@@ -1,6 +1,12 @@
 # Python development for Glyphs.app
 
-These are text editor snippets intended to facilitate Python development for Glyphs.app. Have fun. Since I use TextMate myself, the TextMate snippets can safely be assumed to be up to date most of the time. I occasionally take the time to update the Sublime Text snippets. Since I don’t use Atom, I depend on other people’s pull requests. Hence, the Atom snippets are usually out of date. If you want up-to-date snippets for Sublime Text or Atom, feel free to contribute to this repository on a regular basis.
+These are text editor snippets intended to facilitate Python development for Glyphs.app. Have fun. 
+
+**TextMate:** Since I use TextMate myself, the TextMate snippets can safely be assumed to be up to date most of the time. 
+
+**Sublime Text:** Newer versions of Sublime Text can read TextMate bundle, so you are up to date automatically. See installation instructions below.
+
+**Atom:** Since I don’t use Atom, I depend on other people’s pull requests. Hence, the Atom snippets are usually out of date. If you want up-to-date snippets for Sublime Text or Atom, feel free to contribute to this repository on a regular basis.
 
 ### Snippets
 
@@ -46,7 +52,7 @@ These are text editor snippets intended to facilitate Python development for Gly
 ### Installation
 
 * TextMate bundle: double click to install
-* Sublime Text 2 snippets: move to `~/Library/Application Support/Sublime Text 2/Packages/User/`
+* Sublime Text: Open *Sublime Text > Preferences > Browse Packages…* and move the `Python for Glyphs.tmbundle` into the folder that appears
 * Atom: move to `~/.atom/packages/python-to-glyphs`
 
 ### License

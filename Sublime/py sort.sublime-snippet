@@ -1,8 +1,0 @@
-<snippet>
-	<content><![CDATA[
-sorted( ${1:[ ${2:[l.parent.name, l.bounds.origin.y]} for l in selectedLayers]}, key = lambda thisListItem: ${3:thisListItem[1]} )$0
-]]></content>
-	<description>py sort</description>
-	<tabTrigger>sort</tabTrigger>
-	<!-- 5225E965-C129-4C77-A7FE-C667F7D45566 -->
-</snippet>

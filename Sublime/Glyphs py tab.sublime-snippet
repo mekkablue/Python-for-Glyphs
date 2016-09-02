@@ -1,9 +1,0 @@
-<snippet>
-	<content><![CDATA[# opens new Edit tab:
-${1:thisFont}.newTab( ${2:"abc"} )$0
-
-]]></content>
-	<description>Glyphs py tab</description>
-	<tabTrigger>tab</tabTrigger>
-	<!-- 6362E8C7-4931-4011-8782-B91FC63DFB53 -->
-</snippet>

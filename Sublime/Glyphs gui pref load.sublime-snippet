@@ -1,8 +1,0 @@
-<snippet>
-	<content><![CDATA[
-self.w.${2:itemClassName}.set( Glyphs.defaults["com.mekkablue.${1:mainClassName}.$2"] )$0
-]]></content>
-	<description>Glyphs gui pref load</description>
-	<tabTrigger>prefload</tabTrigger>
-	<!-- 0767D626-5D92-41C1-8607-598A5AEA4177 -->
-</snippet>
