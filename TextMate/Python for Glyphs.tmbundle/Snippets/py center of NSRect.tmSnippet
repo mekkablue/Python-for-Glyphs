@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>def centerOfRect(rect):
+	"""
+	Returns the center of NSRect rect as an NSPoint.
+	"""
+	x = rect.origin.x + rect.size.width * 0.5
+	y = rect.origin.y + rect.size.height * 0.5
+	return NSPoint(x,y)
+$0</string>
+	<key>name</key>
+	<string>py center of NSRect</string>
+	<key>tabTrigger</key>
+	<string>center</string>
+	<key>uuid</key>
+	<string>FDE9D8DD-19CD-450C-A3CE-9837FA2A419B</string>
+</dict>
+</plist>

@@ -15,6 +15,7 @@ These are text editor snippets intended to facilitate Python development for Gly
 * `clear⇥` Clears the Macro Window log.
 * `macro⇥` Clears the Macro Window log and brings the Macro Window to the front.
 * `angle⇥` Function returning the angle between two points.
+* `center⇥` Convenience function returning the center (as NSPoint) of an NSRect.
 * `circle⇥` Function returning a GSPath containing a circle.
 * `otclass⇥` Function that creates or (if it already exists) updates an OpenType class.
 * `otfeature⇥` Function that creates or (if it already exists) updates an OpenType feature.
