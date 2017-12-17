@@ -4,9 +4,9 @@ These are text editor snippets intended to facilitate Python development for Gly
 
 **TextMate:** Since I use TextMate myself, the TextMate snippets can safely be assumed to be up to date most of the time. 
 
-**Sublime Text:** Newer versions of Sublime Text can read TextMate bundle, so you are up to date automatically. See installation instructions below.
+**Sublime Text:** Newer versions of Sublime Text can read TextMate bundles, so you are up to date automatically. See installation instructions below.
 
-**Atom:** Since I don’t use Atom, I depend on other people’s pull requests. Hence, the Atom snippets are usually out of date. If you want up-to-date snippets for Sublime Text or Atom, feel free to contribute to this repository on a regular basis.
+**Atom:** Since I don’t use Atom, I depend on other people’s pull requests. Hence, the Atom snippets are usually out of date. If you want up-to-date snippets for Atom, feel free to contribute to this repository on a regular basis.
 
 ### Snippets
 
