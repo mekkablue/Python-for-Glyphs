@@ -53,11 +53,7 @@ class ${3:${1/ //g}}( object ):
 
 	def LoadPreferences( self ):
 		try:
-			NSUserDefaults.standardUserDefaults().registerDefaults_(
-				{
-					"com.$4.$3.popup_1": "0"
-				}
-			)
+			Glyphs.registerDefault("com.$4.$3.popup_1", 0)
 			self.w.popup_1.set( Glyphs.defaults["com.$4.$3.popup_1"] )
 		except:
 			return False
@@ -86,6 +82,8 @@ class ${3:${1/ //g}}( object ):
 			# brings macro window to front and reports error:
 			Glyphs.showMacroWindow()
 			print "$1 Error: %s" % e
+			import traceback
+			print traceback.format_exc()
 
 $3()</string>
 	<key>name</key>
