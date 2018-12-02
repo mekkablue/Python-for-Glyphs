@@ -3,13 +3,13 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>Glyphs.defaults["com.${1:mekkablue}.${2:mainClassName}.${3:itemName}"] = self.w.$3.get()$0
+	<string>Glyphs.registerDefault( "com.${1:mekkablue}.${2:mainClassName}.${3:itemName}", ${4:0} )$0
 </string>
 	<key>name</key>
-	<string>Glyphs gui pref save</string>
+	<string>Glyphs gui pref register</string>
 	<key>tabTrigger</key>
 	<string>pref</string>
 	<key>uuid</key>
-	<string>4E5AE413-E026-44AE-B5AC-6169EF6056BC</string>
+	<string>F9B4762D-B48F-4325-B57B-DA8B2790AB70</string>
 </dict>
 </plist>

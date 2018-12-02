@@ -37,18 +37,18 @@ These are text editor snippets intended to facilitate Python development for Gly
 #### Vanilla-specific snippets
 
 * `gsgui⇥` Basic structure of a Glyphs script with a dialog (GUI). Uses Vanilla.
-* `prefload⇥` Load preferences for Vanilla GUI items.
-* `prefsave⇥` Save preferences for Vanilla GUI items.
+* `pref⇥` Register, load, register & load, or save preferences for Vanilla GUI items.
+* `button⇥` Vanilla popup and square button.
+* `text⇥` Vanilla text box or text edit field.
 * `checkbox⇥` Vanilla checkbox.
-* `radio⇥` Vanilla radiobutton.
+* `radio⇥` Vanilla radiobuttons.
 
 #### Plugin SDK-specific snippets
 
 * `rgb⇥` NSColor object with RGB definition.
-* `plugindef⇥` Function definition structure suited for the Plugin SDK.
+* `plugindef⇥` Function definition structure better suited for the Plugin SDK.
 * `log⇥` Log a message to the console.
-* `infoproduct⇥` Prefill the *productPageURL* entry of a plugin’s *Info.plist* with a GitHub URL.
-* `infoupdate⇥` Prefill the *updateFeedURL* entry of a plugin’s *Info.plist* with a GitHub URL.
+* `url⇥` Prefill the *productPageURL* or *updateFeedURL* entry of a plugin’s *Info.plist* with a GitHub URL.
 
 ### Installation
 

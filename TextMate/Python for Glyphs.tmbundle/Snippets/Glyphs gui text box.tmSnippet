@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>self.w.${1:myText} = vanilla.TextBox( (${2:inset}, linePos+2, -$2, 14), "${3:Apply function to the font}", sizeStyle='small', selectable=True )
+${4:linePos += lineHeight
+}$0</string>
+	<key>name</key>
+	<string>Glyphs gui text box</string>
+	<key>tabTrigger</key>
+	<string>text</string>
+	<key>uuid</key>
+	<string>5BA43232-D3E7-42D6-8744-2A87A8193192</string>
+</dict>
+</plist>

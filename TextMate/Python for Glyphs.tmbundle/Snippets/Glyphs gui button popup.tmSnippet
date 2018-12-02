@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>self.w.${1:popupButton} = vanilla.PopUpButton( (${2:inset+${3:100}}, linePos, ${4:-inset}, 17), ${5:(u"Option 1", u"Option 2")}, sizeStyle='small', callback=self.${6:update} )
+${7:linePos += lineHeight
+}$0
+</string>
+	<key>name</key>
+	<string>Glyphs gui button popup</string>
+	<key>tabTrigger</key>
+	<string>button</string>
+	<key>uuid</key>
+	<string>D046CB98-4894-4F6F-8359-3FCADC7696D4</string>
+</dict>
+</plist>

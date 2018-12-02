@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>self.w.${1:updateButton} = vanilla.SquareButton( (${2:-inset-20}, linePos, ${3:-inset}, 18), u"${4:↺}", sizeStyle='small', callback=self.${5:update} )
+${6:linePos += lineHeight
+}$0</string>
+	<key>name</key>
+	<string>Glyphs gui button square</string>
+	<key>tabTrigger</key>
+	<string>button</string>
+	<key>uuid</key>
+	<string>C2963F4D-7E80-4D76-9F3E-F91C236E20E5</string>
+</dict>
+</plist>
