@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>#MenuTitle: New Tab with ${1:Glyphs Exceeding Ascender}
+# -*- coding: utf-8 -*-
+__doc__="""
+Opens a new Edit tab containing all glyphs ${2:exceeding the ascender height.}
+"""
+
+def isLayerAffected( thisLayer ):
+	ascender = thisLayer.master.ascender
+	for thisPath in thisLayer.paths:
+		for thisNode in thisPath.nodes:
+			if thisNode.y &gt; ascender:
+				return True$0
+	return False
+
+Glyphs.clearLog() # clears log of Macro window
+thisFont = Glyphs.font # frontmost font
+affectedLayers = []
+for thisGlyph in thisFont.glyphs: # loop through all glyphs
+	for thisLayer in thisGlyph.layers: # loop through all layers
+		print "Analysing %s" % thisGlyph.name # report status in Macro window
+		# collect affected layers:
+		if isLayerAffected( thisLayer ): 
+			affectedLayers.append(thisLayer)
+
+# open a new tab with the affected layers:
+if affectedLayers:
+	newTab = thisFont.newTab()
+	newTab.layers = affectedLayers
+# otherwise send a message:
+else:
+	Message(
+		title = "Nothing Found",
+		message = "Could not find any glyphs $2",
+		OKButton = None
+	)
+	
+</string>
+	<key>name</key>
+	<string>Glyphs py report</string>
+	<key>tabTrigger</key>
+	<string>gspy</string>
+	<key>uuid</key>
+	<string>519D1078-9594-4037-876B-6813C2010F98</string>
+</dict>
+</plist>

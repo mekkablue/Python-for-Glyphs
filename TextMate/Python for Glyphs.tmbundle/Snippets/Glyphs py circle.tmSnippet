@@ -23,13 +23,14 @@
 			newBCP = GSNode()
 			newBCP.type = OFFCURVE
 			newBCP.position = bcpPosition
-			circle.addNode_(newBCP)
+			circle.nodes.append(newBCP)
 		
 		# Add the On-Curve of the segment:
 		newCurvepoint = GSNode()
 		newCurvepoint.type = CURVE
+		newCurvepoint.smooth = True
 		newCurvepoint.position  = NSPoint( triplet[2][0], triplet[2][1] )
-		circle.addNode_(newCurvepoint)
+		circle.nodes.append(newCurvepoint)
 		
 	circle.closed = True
 	return circle
