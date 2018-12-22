@@ -33,8 +33,8 @@ These are text editor snippets intended to facilitate Python development for Gly
 * `sort⇥` Sort a list of objects by a certain attribute of those objects (e.g. layers by their max y).
 * `terminal⇥` Execute a Terminal (bash) command.
 * `trace⇥` Import the *traceback* library and print a traceback. Useful for *except* clauses.
-* `subtract⇥` Intersect GSPath objects.
-* `intersect⇥` Subtract GSPath objects.
+* `subtract⇥` Subtract GSPath objects.
+* `intersect⇥` Intersect GSPath objects.
 
 #### Vanilla-specific snippets
 
