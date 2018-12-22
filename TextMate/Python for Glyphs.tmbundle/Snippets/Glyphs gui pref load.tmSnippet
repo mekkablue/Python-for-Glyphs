@@ -3,11 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>self.w.${2:itemClassName}.set( Glyphs.defaults["com.mekkablue.${1:mainClassName}.$2"] )$0</string>
+	<string>self.w.${1:itemName}.set( Glyphs.defaults["com.${2:mekkablue}.${3:mainClassName}.$1"] )$0</string>
 	<key>name</key>
 	<string>Glyphs gui pref load</string>
 	<key>tabTrigger</key>
-	<string>prefload</string>
+	<string>pref</string>
 	<key>uuid</key>
 	<string>0767D626-5D92-41C1-8607-598A5AEA4177</string>
 </dict>

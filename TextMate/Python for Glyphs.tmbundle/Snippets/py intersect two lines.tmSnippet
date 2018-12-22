@@ -40,7 +40,7 @@
 	return NSPoint( x, y )
 $0</string>
 	<key>name</key>
-	<string>py intersect</string>
+	<string>py intersect two lines</string>
 	<key>tabTrigger</key>
 	<string>intersect</string>
 	<key>uuid</key>

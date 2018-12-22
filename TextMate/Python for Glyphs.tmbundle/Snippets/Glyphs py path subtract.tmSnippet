@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>paths = ${1:[Layer.paths[2]]} # list of original paths
+subtractPaths = ${2:[Layer.paths[0], Layer.paths[1]]} # list of paths to be subtracted from original paths
+pathOperator = GSPathOperator.alloc().init() # needs to be initialized only once
+pathOperator.subtractPaths_from_error_debug_(subtractPaths, paths, None, False)
+${3:thisLayer.paths} = paths # result of boolean operation is in paths
+$0</string>
+	<key>name</key>
+	<string>Glyphs py path subtract</string>
+	<key>tabTrigger</key>
+	<string>subtract</string>
+	<key>uuid</key>
+	<string>B2070AD7-1990-4927-9C70-F9E1C5DDADB6</string>
+</dict>
+</plist>

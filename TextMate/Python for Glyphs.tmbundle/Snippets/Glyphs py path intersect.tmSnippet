@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>paths = ${1:[Layer.paths[2]]} # list of original paths
+intersectPaths = ${2:[Layer.paths[0], Layer.paths[1]]} # list of paths to be intersected with original paths
+pathOperator = GSPathOperator.alloc().init() # needs to be initialized only once
+pathOperator.intersectPaths_from_error_(intersectPaths, paths, None)
+${3:thisLayer.paths} = paths # result of boolean operation is in paths
+$0</string>
+	<key>name</key>
+	<string>Glyphs py path intersect</string>
+	<key>tabTrigger</key>
+	<string>intersect</string>
+	<key>uuid</key>
+	<string>FF4C5BEA-2BCC-48FE-82CB-3BCA5663EEC8</string>
+</dict>
+</plist>

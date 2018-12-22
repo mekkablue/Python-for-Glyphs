@@ -27,12 +27,14 @@ class ${3:${1/ //g}}( object ):
 		)
 		
 		# UI elements:
-		self.w.text_1 = vanilla.TextBox( (15-1, 12+2, 75, 14), "Insert", sizeStyle='small' )
-		self.w.popup_1 = vanilla.PopUpButton( (15+40, 12, 50, 17), [str(x) for x in range( 3, 12 )], callback=self.SavePreferences, sizeStyle='small' )
-		self.w.edit_1 = vanilla.EditText( (15+40+50+10, 12, -15, 15+3), "insert text here", sizeStyle = 'small')
+		linePos, inset, lineHeight = 12, 15, 22
+		self.w.text_1 = vanilla.TextBox( (inset-1, linePos+2, 75, 14), "inset", sizeStyle='small' )
+		self.w.popup_1 = vanilla.PopUpButton( (inset+80, linePos, 50, 17), [str(x) for x in range( 3, 12 )], callback=self.SavePreferences, sizeStyle='small' )
+		self.w.edit_1 = vanilla.EditText( (inset+80+55, linePos, -inset, 19), "insert text here", sizeStyle='small')
+		linePos += lineHeight
 		
 		# Run Button:
-		self.w.runButton = vanilla.Button((-80-15, -20-15, -15, -15), "Run", sizeStyle='regular', callback=self.$5 )
+		self.w.runButton = vanilla.Button( (-80-inset, -20-inset, -inset, -inset), "Run", sizeStyle='regular', callback=self.$5 )
 		self.w.setDefaultButton( self.w.runButton )
 		
 		# Load Settings:
@@ -77,8 +79,8 @@ class ${3:${1/ //g}}( object ):
 			if not self.SavePreferences( self ):
 				print "Note: '$1' could not write preferences."
 			
-			${6:self.w.close() # delete if you want window to stay open}
-		except Exception, e:
+${6:			self.w.close() # delete if you want window to stay open
+}		except Exception, e:
 			# brings macro window to front and reports error:
 			Glyphs.showMacroWindow()
 			print "$1 Error: %s" % e

@@ -5,9 +5,9 @@
 	<key>content</key>
 	<string>https://raw.githubusercontent.com/${1:github username}/${2:plugin name}/master/$2.${3|glyphsReporter,glyphsFilter,glyphsTool,glyphsFileFormat,glyphsPlugin,glyphsPalette|}/Contents/Info.plist$0</string>
 	<key>name</key>
-	<string>Info updateFeedURL</string>
+	<string>Glyphs plugin updateFeedURL</string>
 	<key>tabTrigger</key>
-	<string>infoupdate</string>
+	<string>url</string>
 	<key>uuid</key>
 	<string>2A905466-09E0-429D-BD01-268964BFABCD</string>
 </dict>

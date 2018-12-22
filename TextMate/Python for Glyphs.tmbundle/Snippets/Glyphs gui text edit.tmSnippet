@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>self.w.${1:textEntry} = vanilla.EditText( (${2:inset${3:+80}}, linePos, ${4:-inset}, 19), "${5:insert text here}", sizeStyle='small' )
+${6:linePos += lineHeight
+}$0
+</string>
+	<key>name</key>
+	<string>Glyphs gui text edit</string>
+	<key>tabTrigger</key>
+	<string>text</string>
+	<key>uuid</key>
+	<string>C1706817-3A24-43DB-9B9F-B2A54CD9DAF6</string>
+</dict>
+</plist>

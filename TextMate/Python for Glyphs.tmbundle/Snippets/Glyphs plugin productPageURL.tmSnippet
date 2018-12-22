@@ -5,9 +5,9 @@
 	<key>content</key>
 	<string>https://github.com/${1:github username}/${2:plugin name}$0</string>
 	<key>name</key>
-	<string>Info productPageURL</string>
+	<string>Glyphs plugin productPageURL</string>
 	<key>tabTrigger</key>
-	<string>infoproduct</string>
+	<string>url</string>
 	<key>uuid</key>
 	<string>5E4C10DA-0947-4453-91A1-A0FC5CA250EC</string>
 </dict>
