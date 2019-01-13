@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>self.w.${1:element}.getNS${2|TextField,Button,ComboBox,PopUpButton,ProgressIndicator,Slider,Window,Box,ColorWell,DatePicker,Drawer,ImageView,LevelIndicator,Matrix,OutlineView,ScrollView,SearchField,SecureTextField,SegmentedButton,SplitView,TableView,TabView,View,TextView,VisualEffectView,WindowController|}().setToolTip_("${3:Tooltip text}.")
+$0
+</string>
+	<key>name</key>
+	<string>Glyphs gui tooltip</string>
+	<key>tabTrigger</key>
+	<string>tooltip</string>
+	<key>uuid</key>
+	<string>EE0FDDF3-0AB2-477D-B901-AE26BA3816F8</string>
+</dict>
+</plist>

@@ -3,8 +3,8 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>self.w.${1:myCheckBox} = vanilla.CheckBox( (${2:inset}, ${3:linePos-1}, -$2, 20), "${4:Activate option}", value=${5|False,True|}, callback=self.SavePreferences, sizeStyle='small' )
-${6:linePos += lineHeight
+	<string>self.w.${1:myCheckBox} = vanilla.CheckBox( (${2:inset}, ${3:linePos-1}, ${4:-$2}, 20), u"${5:Activate option}", value=${6|False,True|}, callback=self.SavePreferences, sizeStyle='small' )
+${7:linePos += lineHeight
 }$0</string>
 	<key>name</key>
 	<string>Glyphs gui checkbox</string>

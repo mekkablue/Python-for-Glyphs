@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>import vanilla
+help(vanilla.${1|ActionButton,Box,Button,CheckBox,CheckBoxListCell,ColorWell,ComboBox,DatePicker,Drawer,EditText,FloatingWindow,GradientButton,Group,HUDFloatingWindow,HelpButton,HorizontalLine,ImageButton,ImageListCell,ImageView,LevelIndicator,LevelIndicatorListCell,List,ObjectBrowser,PathControl,PopUpButton,PopUpButtonListCell,Popover,ProgressBar,ProgressSpinner,RadioGroup,ScrollView,SearchBox,SecureEditText,SegmentedButton,SegmentedButtonListCell,Sheet,Slider,SliderListCell,SplitView,SplitView2,SquareButton,Tabs,TextBox,TextEditor,VanillaBaseControl,VanillaBaseObject,VanillaError,VerticalLine,Window|})
+$0</string>
+	<key>name</key>
+	<string>vanilla help</string>
+	<key>tabTrigger</key>
+	<string>vanilla</string>
+	<key>uuid</key>
+	<string>240EFB4E-E02A-45FD-AA0F-BDB148FBD2BE</string>
+</dict>
+</plist>

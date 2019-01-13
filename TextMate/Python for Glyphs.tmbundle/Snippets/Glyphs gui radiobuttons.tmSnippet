@@ -3,10 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>listOfOptions = [ ${1:"Option 1", "Option 2", "Option 3"} ]
-self.w.${2:radioButtons} = vanilla.RadioGroup( (15, ${3:100}, -15, 20*len(listOfOptions) ), listOfOptions, callback=self.SavePreferences, sizeStyle = 'small' )
+	<string>radioOptions = ( ${1:u"Option 1", u"Option 2", u"Option 3"} )
+self.w.${2:radioButtons} = vanilla.RadioGroup( (inset${3:*2}, linePos, -inset, lineHeight*len(radioOptions) ), radioOptions, callback=self.SavePreferences, sizeStyle = 'small' )
 self.w.$2.set( 0 )
-$0</string>
+${4:linePos += lineHeight*len(radioOptions)}$0
+</string>
 	<key>name</key>
 	<string>Glyphs gui radiobuttons</string>
 	<key>tabTrigger</key>

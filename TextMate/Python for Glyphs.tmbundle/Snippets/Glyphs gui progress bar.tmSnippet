@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>self.w.progress = vanilla.ProgressBar((inset, linePos, -inset, 16))
+self.w.progress.set(0) # set progress indicator to zero
+${1:linePos+=lineHeight}$0
+</string>
+	<key>name</key>
+	<string>Glyphs gui progress bar</string>
+	<key>tabTrigger</key>
+	<string>progress</string>
+	<key>uuid</key>
+	<string>EE4778B2-A0E7-4A0D-93DD-B133AC2BCA0D</string>
+</dict>
+</plist>
