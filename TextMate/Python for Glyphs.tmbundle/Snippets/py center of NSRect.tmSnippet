@@ -7,9 +7,8 @@
 	"""
 	Returns the center of NSRect rect as an NSPoint.
 	"""
-	x = rect.origin.x + rect.size.width * 0.5
-	y = rect.origin.y + rect.size.height * 0.5
-	return NSPoint(x,y)
+	center = NSPoint( rect.origin.x + rect.size.width/2, rect.origin.y + rect.size.height/2 )
+	return center
 $0</string>
 	<key>name</key>
 	<string>py center of NSRect</string>
