@@ -44,6 +44,8 @@ These are text editor snippets intended to facilitate Python development for Gly
 * `text⇥` Vanilla text box or text edit field.
 * `checkbox⇥` Vanilla checkbox.
 * `radio⇥` Vanilla radiobuttons.
+* `tooltip⇥` Tooltip for a Vanilla object.
+* `vanilla⇥` Show help for Vanilla classes.
 
 #### Plugin SDK-specific snippets
 
