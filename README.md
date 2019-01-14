@@ -25,7 +25,7 @@ These are text editor snippets intended to facilitate Python development for Gly
 * `measurement⇥` Function that returns intersection points (like the Measurement tool does) of the decomposed and overlap-removed layer.
 * `msg⇥` Function for displaying a simple (non-Vanilla) message dialog.
 * `select⇥` Adds item on a layer to the user selection.
-* `tab⇥` Opens a new tab with supplied text.
+* `tab⇥` Opens a new tab with supplied text or collection of layers.
 * `transform⇥` Function for creating a NSAffineTransform object, necessary for shifting, scaling, skewing, rotating.
 * `bezier⇥` Function for returning the x,y for a given t on a cubic Bézier curve segment.
 * `clipboard⇥` Function for setting the clipboard.
@@ -35,6 +35,8 @@ These are text editor snippets intended to facilitate Python development for Gly
 * `trace⇥` Import the *traceback* library and print a traceback. Useful for *except* clauses.
 * `subtract⇥` Subtract GSPath objects.
 * `intersect⇥` Intersect GSPath objects.
+* `timer⇥` Method for taking and reporting elapsed time.
+* `notification⇥` Display a floating notification in top right corner of screen.
 
 #### Vanilla-specific snippets
 
