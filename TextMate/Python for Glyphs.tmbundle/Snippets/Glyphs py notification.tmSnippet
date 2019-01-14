@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string># Floating notification:
+Glyphs.showNotification( 
+	u"%s$1" % (thisFont.familyName$2),
+	${4:u"${3:Script is finished.}",}
+	)$0
+</string>
+	<key>name</key>
+	<string>Glyphs py notification</string>
+	<key>tabTrigger</key>
+	<string>notification</string>
+	<key>uuid</key>
+	<string>CBFD7759-0A45-4AA7-BDCA-C75CB056B9CA</string>
+</dict>
+</plist>

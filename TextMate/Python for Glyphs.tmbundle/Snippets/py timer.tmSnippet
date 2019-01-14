@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>from timeit import default_timer as timer
+
+def reportTimeInNaturalLanguage( seconds ):
+	if seconds &gt; 60.0:
+		timereport = "%i:%02i minutes" % ( seconds//60, seconds%60 )
+	elif seconds &lt; 1.0:
+		timereport = "%.2f seconds" % seconds
+	elif seconds &lt; 20.0:
+		timereport = "%.1f seconds" % seconds
+	else:
+		timereport = "%i seconds" % seconds
+	return timereport
+
+${2:# start taking time:
+start = timer()
+
+# take time:
+end = timer()
+timereport = reportTimeInNaturalLanguage( end - start )
+${1:print "Time elapsed: %s." % timereport}
+}$0</string>
+	<key>name</key>
+	<string>py timer</string>
+	<key>tabTrigger</key>
+	<string>timer</string>
+	<key>uuid</key>
+	<string>3BD03C70-490F-478A-99C7-1B2E8945D09E</string>
+</dict>
+</plist>
