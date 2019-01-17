@@ -64,8 +64,16 @@ class ${3:${1/ //g}}( object ):
 
 	def ${5:$3Main}( self, sender ):
 		try:
-			${7:thisFont = Glyphs.font # frontmost font
-			listOfSelectedLayers = thisFont.selectedLayers # active layers of currently selected glyphs
+			# update settings to the latest user input:
+			if not self.SavePreferences( self ):
+				print "Note: '$1' could not write preferences."
+			
+			thisFont = Glyphs.font # frontmost font
+			print "$1 Report for %s" % thisFont.familyName
+			print thisFont.filepath
+			print
+			
+			${7:listOfSelectedLayers = thisFont.selectedLayers # active layers of currently selected glyphs
 			for thisLayer in listOfSelectedLayers: # loop through layers
 				thisGlyph = thisLayer.parent
 				print thisGlyph.name, thisLayer.name
@@ -75,9 +83,6 @@ class ${3:${1/ //g}}( object ):
 						print "-- %.1f %.1f" % ( thisNode.x, thisNode.y )
 			}
 			$0
-			
-			if not self.SavePreferences( self ):
-				print "Note: '$1' could not write preferences."
 			
 ${6:			self.w.close() # delete if you want window to stay open
 }		except Exception, e:
