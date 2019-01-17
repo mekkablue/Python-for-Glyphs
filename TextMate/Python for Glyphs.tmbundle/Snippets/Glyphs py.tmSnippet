@@ -39,7 +39,7 @@ ${6:thisFont.disableUpdateInterface() # suppresses UI updates in Font View
 	print "Processing %s" % thisGlyph.name
 ${7:	thisGlyph.beginUndo() # begin undo grouping
 }	process( thisLayer )
-${7:	thisGlyph.endUndo()   # end undo grouping
+${8:	thisGlyph.endUndo()   # end undo grouping
 }
 ${6:
 thisFont.enableUpdateInterface() # re-enables UI updates in Font View}
