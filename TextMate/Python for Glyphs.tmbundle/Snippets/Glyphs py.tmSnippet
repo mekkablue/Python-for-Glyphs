@@ -41,7 +41,7 @@ ${7:	thisGlyph.beginUndo() # begin undo grouping
 }	process( thisLayer )
 ${8:	thisGlyph.endUndo()   # end undo grouping
 }
-${6:
+${9:
 thisFont.enableUpdateInterface() # re-enables UI updates in Font View}
 </string>
 	<key>name</key>

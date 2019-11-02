@@ -4,6 +4,7 @@
 <dict>
 	<key>content</key>
 	<string>${1:import math
+}${2:from AppKit import NSAffineTransform, NSAffineTransformStruct
 }
 def transform(shiftX=0.0, shiftY=0.0, rotate=0.0, skew=0.0, scale=1.0):
 	"""

@@ -3,7 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>def offsetLayer( thisLayer, offset, makeStroke=False, position=0.5, autoStroke=False ):
+	<string>${1:from Foundation import NSClassFromString}
+
+def offsetLayer( thisLayer, offset, makeStroke=False, position=0.5, autoStroke=False ):
 	offsetFilter = NSClassFromString("GlyphsFilterOffsetCurve")
 	offsetFilter.offsetLayer_offsetX_offsetY_makeStroke_autoStroke_position_error_shadow_(
 		thisLayer,

@@ -3,8 +3,8 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>${1:from AppKit import *}
-
+	<string>${1:from AppKit import NSPasteboard, NSStringPboardType
+}
 def setClipboard( myText ):
 	"""
 	Sets the contents of the clipboard to myText.

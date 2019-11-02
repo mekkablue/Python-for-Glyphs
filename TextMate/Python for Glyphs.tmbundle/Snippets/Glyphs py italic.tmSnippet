@@ -4,6 +4,8 @@
 <dict>
 	<key>content</key>
 	<string>${1:import math}
+${2:from Foundation import NSPoint}
+
 def italicize( thisPoint, italicAngle=0.0, pivotalY=0.0 ):
 	"""
 	Returns the italicized position of an NSPoint 'thisPoint'

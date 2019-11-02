@@ -3,7 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>def circlePath( center=NSPoint(0,0), radius=50, bcp=4.0*(2.0**0.5-1.0)/3.0 ):
+	<string>from Foundation import NSPoint
+
+def circlePath( center=NSPoint(0,0), radius=50, bcp=4.0*(2.0**0.5-1.0)/3.0 ):
 	circle = GSPath()
 	x = center.x
 	y = center.y

@@ -3,7 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>def intersect( pointA, pointB, pointC, pointD ):
+	<string>${1:from Foundation import NSPoint
+}
+def intersect( pointA, pointB, pointC, pointD ):
 	"""
 	Returns an NSPoint of the intersection AB with CD,
 	or None if there is no intersection.

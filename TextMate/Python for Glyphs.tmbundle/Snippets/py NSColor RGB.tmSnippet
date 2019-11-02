@@ -3,7 +3,8 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>${1:thisColor} = NSColor.colorWithRed_green_blue_alpha_(${2:1.0}, ${3:0.1}, ${4:0.3}, ${5:0.3})$0</string>
+	<string>${1:from AppKit import NSColor}
+${2:thisColor} = NSColor.colorWithRed_green_blue_alpha_(${3:1.0}, ${4:0.1}, ${5:0.3}, ${6:0.3})$0</string>
 	<key>name</key>
 	<string>py NSColor RGB</string>
 	<key>tabTrigger</key>

@@ -3,7 +3,8 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>def centerOfRect(rect):
+	<string>${1:from Foundation import NSPoint, NSRect
+}def centerOfRect(rect):
 	"""
 	Returns the center of NSRect rect as an NSPoint.
 	"""
