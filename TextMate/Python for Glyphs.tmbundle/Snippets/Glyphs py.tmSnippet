@@ -3,9 +3,10 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>from __future__ import division, print_function
-#MenuTitle: ${1:$TM_FILENAME}
+	<string>#MenuTitle: ${1:$TM_FILENAME}
 # -*- coding: utf-8 -*-
+from __future__ import division, print_function, unicode_literals
+from builtins import str
 __doc__="""
 ${2:Create effect for selected glyphs.}
 """
