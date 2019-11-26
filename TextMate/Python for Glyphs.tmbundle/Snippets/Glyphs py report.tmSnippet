@@ -3,7 +3,8 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>#MenuTitle: New Tab with ${1:Glyphs Exceeding Ascender}
+	<string>from __future__ import division, print_function
+#MenuTitle: New Tab with ${1:Glyphs Exceeding Ascender}
 # -*- coding: utf-8 -*-
 __doc__="""
 Opens a new Edit tab containing all glyphs ${2:exceeding the ascender height.}
@@ -22,7 +23,7 @@ thisFont = Glyphs.font # frontmost font
 affectedLayers = []
 for thisGlyph in thisFont.glyphs: # loop through all glyphs
 	for thisLayer in thisGlyph.layers: # loop through all layers
-		print "Analysing %s" % thisGlyph.name # report status in Macro window
+		print("Analysing %s" % thisGlyph.name) # report status in Macro window
 		# collect affected layers:
 		if isLayerAffected( thisLayer ): 
 			affectedLayers.append(thisLayer)

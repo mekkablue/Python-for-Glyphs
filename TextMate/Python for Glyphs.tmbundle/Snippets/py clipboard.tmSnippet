@@ -19,7 +19,7 @@ def setClipboard( myText ):
 		return False
 
 ${2:if not setClipboard(${3:"clipboard text"}):
-	print "Warning: could not set clipboard to %s" % ( $3 )}
+	print("Warning: could not set clipboard to %s" % ( $3 )})
 $0</string>
 	<key>name</key>
 	<string>py clipboard</string>

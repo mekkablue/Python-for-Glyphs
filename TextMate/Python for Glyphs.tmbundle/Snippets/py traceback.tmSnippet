@@ -4,7 +4,7 @@
 <dict>
 	<key>content</key>
 	<string>${1:import traceback
-}${2:print }traceback.format_exc()$0</string>
+}print(traceback.format_exc())$0</string>
 	<key>name</key>
 	<string>py traceback</string>
 	<key>tabTrigger</key>

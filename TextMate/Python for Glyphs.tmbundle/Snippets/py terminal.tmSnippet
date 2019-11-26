@@ -8,11 +8,11 @@ command = '${2:uptime}'
 commandArgs = [${3/.+/"/}${3:~/Library/Application Support/Glyphs/Scripts}${3/.+/"/}] # arguments (may contain spaces) as lists of strings
 commandExecution = subprocess.Popen( command.split(" ")+commandArgs, stdout=subprocess.PIPE, stderr=subprocess.PIPE )
 output, error = commandExecution.communicate()
-${4:print "RETURNCODE (0=OK): %i" % commandExecution.returncode}
+${4:print("RETURNCODE (0=OK): %i" % commandExecution.returncode)}
 if output:
-	${5:print "\nOUTPUT:\n%s" % output}
+	${5:print("\nOUTPUT:\n%s" % output)}
 if error:
-	${6:print "\nERROR:\n%s" % error}
+	${6:print("\nERROR:\n%s" % error)}
 $0
 </string>
 	<key>name</key>

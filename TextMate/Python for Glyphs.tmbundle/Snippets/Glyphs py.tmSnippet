@@ -3,7 +3,8 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>#MenuTitle: ${1:$TM_FILENAME}
+	<string>from __future__ import division, print_function
+#MenuTitle: ${1:$TM_FILENAME}
 # -*- coding: utf-8 -*-
 __doc__="""
 ${2:Create effect for selected glyphs.}
@@ -15,15 +16,15 @@ random.seed()
 def process( thisLayer ):
 	for thisPath in thisLayer.paths:
 		if thisPath.closed:
-			print "- closed path:"
+			print("- closed path:")
 		else:
-			print "- open path:"
+			print("- open path:")
 		for thisNode in thisPath.nodes:
-			print "-- node %.1f %.1f (type %s)" % ( thisNode.x, thisNode.y, thisNode.type )
+			print("-- node %.1f %.1f (type %s)" % ( thisNode.x, thisNode.y, thisNode.type ))
 	for thisComponent in thisLayer.components:
-		print "- component %s at %.1f %.1f" % ( thisComponent.componentName, thisComponent.position.x, thisComponent.position.y )
+		print("- component %s at %.1f %.1f" % ( thisComponent.componentName, thisComponent.position.x, thisComponent.position.y ))
 	for thisAnchor in thisLayer.anchors:
-		print "- anchor %s at %.1f %.1f" % ( thisAnchor.name, thisAnchor.x, thisAnchor.y )
+		print("- anchor %s at %.1f %.1f" % ( thisAnchor.name, thisAnchor.x, thisAnchor.y ))
 	$0
 
 thisFont = Glyphs.font # frontmost font
@@ -36,7 +37,7 @@ ${6:thisFont.disableUpdateInterface() # suppresses UI updates in Font View
  
 }for thisLayer in selectedLayers:
 	thisGlyph = thisLayer.parent
-	print "Processing %s" % thisGlyph.name
+	print("Processing %s" % thisGlyph.name)
 ${7:	thisGlyph.beginUndo() # begin undo grouping
 }	process( thisLayer )
 ${8:	thisGlyph.endUndo()   # end undo grouping

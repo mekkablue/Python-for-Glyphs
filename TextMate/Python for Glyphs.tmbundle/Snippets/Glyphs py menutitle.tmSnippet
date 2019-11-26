@@ -3,7 +3,8 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>#MenuTitle: ${1:$TM_FILENAME}
+	<string>from __future__ import division, print_function
+#MenuTitle: ${1:$TM_FILENAME}
 # -*- coding: utf-8 -*-
 __doc__="""
 ${2:$1}.

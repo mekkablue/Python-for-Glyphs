@@ -22,7 +22,7 @@ start = timer()
 # take time:
 end = timer()
 timereport = reportTimeInNaturalLanguage( end - start )
-${1:print "Time elapsed: %s." % timereport}
+${1:print()"Time elapsed: %s." % timereport)}
 }$0</string>
 	<key>name</key>
 	<string>py timer</string>

@@ -3,7 +3,8 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>#MenuTitle: ${1:$TM_FILENAME}
+	<string>from __future__ import division, print_function
+#MenuTitle: ${1:$TM_FILENAME}
 # -*- coding: utf-8 -*-
 __doc__="""
 ${2:Create effect for selected glyphs.}
@@ -39,7 +40,7 @@ class ${3:${1/ //g}}( object ):
 		
 		# Load Settings:
 		if not self.LoadPreferences():
-			print "Note: '$1' could not load preferences. Will resort to defaults"
+			print("Note: '$1' could not load preferences. Will resort to defaults")
 		
 		# Open window and focus on it:
 		self.w.open()
@@ -66,31 +67,31 @@ class ${3:${1/ //g}}( object ):
 		try:
 			# update settings to the latest user input:
 			if not self.SavePreferences( self ):
-				print "Note: '$1' could not write preferences."
+				print("Note: '$1' could not write preferences.")
 			
 			thisFont = Glyphs.font # frontmost font
-			print "$1 Report for %s" % thisFont.familyName
-			print thisFont.filepath
-			print
+			print("$1 Report for %s" % thisFont.familyName)
+			print(thisFont.filepath)
+			print()
 			
 			${7:listOfSelectedLayers = thisFont.selectedLayers # active layers of currently selected glyphs
 			for thisLayer in listOfSelectedLayers: # loop through layers
 				thisGlyph = thisLayer.parent
-				print thisGlyph.name, thisLayer.name
+				print(thisGlyph.name, thisLayer.name)
 				# output all node coordinates:
 				for thisPath in thisLayer.paths:
 					for thisNode in thisLayer.nodes:
-						print "-- %.1f %.1f" % ( thisNode.x, thisNode.y )
+						print("-- %.1f %.1f" % ( thisNode.x, thisNode.y ))
 			}
 			$0
 			
 ${6:			self.w.close() # delete if you want window to stay open
-}		except Exception, e:
+}		except Exception as e:
 			# brings macro window to front and reports error:
 			Glyphs.showMacroWindow()
-			print "$1 Error: %s" % e
+			print("$1 Error: %s" % e)
 			import traceback
-			print traceback.format_exc()
+			print(traceback.format_exc())
 
 $3()</string>
 	<key>name</key>
