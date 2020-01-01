@@ -1,6 +1,6 @@
 # Python development for Glyphs.app
 
-These are text editor snippets intended to facilitate Python development for Glyphs.app. Have fun. 
+These are text editor snippets intended to facilitate Python (both 2 and 3) development for Glyphs.app. Have fun. 
 
 **TextMate:** Since I use TextMate myself, the TextMate snippets can safely be assumed to be up to date most of the time. 
 
@@ -37,6 +37,7 @@ These are text editor snippets intended to facilitate Python development for Gly
 * `intersect⇥` Intersect GSPath objects.
 * `timer⇥` Method for taking and reporting elapsed time.
 * `notification⇥` Display a floating notification in top right corner of screen.
+* `write` Method *saveFileInLocation()* for writing UTF-8 string into a new file.
 
 #### Vanilla-specific snippets
 

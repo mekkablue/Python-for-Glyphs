@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>${1:import codecs
+}def saveFileInLocation(content="", fileName="test.txt", filePath="~/Desktop"):
+	saveFileLocation = "%s/%s" % (filePath, fileName)
+	saveFileLocation = saveFileLocation.replace( "//", "/" )
+	with codecs.open(saveFileLocation, "w", "utf-8-sig") as thisFile:
+		print("Exporting to:", thisFile.name)
+		thisFile.write( content )
+		thisFile.close()
+	return True
+</string>
+	<key>name</key>
+	<string>py write file</string>
+	<key>tabTrigger</key>
+	<string>write</string>
+	<key>uuid</key>
+	<string>F8A9B749-480B-480A-A181-5755C93F34E6</string>
+</dict>
+</plist>
