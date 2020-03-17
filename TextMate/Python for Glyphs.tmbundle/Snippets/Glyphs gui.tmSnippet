@@ -70,22 +70,28 @@ class ${3:${1/ //g}}( object ):
 				print("Note: '$1' could not write preferences.")
 			
 			thisFont = Glyphs.font # frontmost font
-			print("$1 Report for %s" % thisFont.familyName)
-			print(thisFont.filepath)
-			print()
+			if not thisFont:
+				Message(title="No Font Open", message="The script requires a font. Open a font and run the script again.", OKButton=None)
+			else:
+				print("$1 Report for %s" % thisFont.familyName)
+				if thisFont.filepath:
+					print(thisFont.filepath)
+				else:
+					print("⚠️ The font file has not been saved yet.")
+				print()
 			
-			${7:listOfSelectedLayers = thisFont.selectedLayers # active layers of currently selected glyphs
-			for thisLayer in listOfSelectedLayers: # loop through layers
-				thisGlyph = thisLayer.parent
-				print(thisGlyph.name, thisLayer.name)
-				# output all node coordinates:
-				for thisPath in thisLayer.paths:
-					for thisNode in thisLayer.nodes:
-						print("-- %.1f %.1f" % ( thisNode.x, thisNode.y ))
-			}
-			$0
+				${7:listOfSelectedLayers = thisFont.selectedLayers # active layers of currently selected glyphs
+				for thisLayer in listOfSelectedLayers: # loop through layers
+					thisGlyph = thisLayer.parent
+					print(thisGlyph.name, thisLayer.name)
+					# output all node coordinates:
+					for thisPath in thisLayer.paths:
+						for thisNode in thisLayer.nodes:
+							print("-- %.1f %.1f" % ( thisNode.x, thisNode.y ))
+				}
+				$0
 			
-${6:			self.w.close() # delete if you want window to stay open
+	${6:			self.w.close() # delete if you want window to stay open
 }		except Exception as e:
 			# brings macro window to front and reports error:
 			Glyphs.showMacroWindow()
