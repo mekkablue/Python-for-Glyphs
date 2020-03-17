@@ -38,6 +38,7 @@ These are text editor snippets intended to facilitate Python (both 2 and 3) deve
 * `timer⇥` Method for taking and reporting elapsed time.
 * `notification⇥` Display a floating notification in top right corner of screen.
 * `write` Method *saveFileInLocation()* for writing UTF-8 string into a new file.
+* `keys` NSEvent algorithm for determining which modifier keys are pressed by the user.
 
 #### Vanilla-specific snippets
 

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>${2:from AppKit import ${1:NSEvent}}
+
+keysPressed = NSEvent.modifierFlags()
+${3:optionKey = 524288
+}${5:commandKey = 1048576
+}${7:ctrlKey = 262144
+}${9:fnKey = 8388608
+}${11:shiftKey = 131072
+}${4:optionKeyPressed = keysPressed &amp; optionKey == optionKey
+}${6:commandKeyPressed = keysPressed &amp; commandKey == commandKey
+}${8:ctrlKeyPressed = keysPressed &amp; ctrlKey == ctrlKey
+}${10:fnKeyPressed = keysPressed &amp; fnKey == fnKey
+}${12:shiftKeyPressed = keysPressed &amp; shiftKey == shiftKey
+}$0</string>
+	<key>name</key>
+	<string>py NSEvent Modifier Keys</string>
+	<key>tabTrigger</key>
+	<string>keys</string>
+	<key>uuid</key>
+	<string>056A298C-4F4C-4632-B496-BA32852DD41F</string>
+</dict>
+</plist>
