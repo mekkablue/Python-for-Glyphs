@@ -46,31 +46,40 @@ class ${3:${1/ //g}}( object ):
 		self.w.open()
 		self.w.makeKey()
 		
-	def SavePreferences( self, sender ):
+	def SavePreferences( self, sender=None ):
 		try:
+			# write current settings into prefs:
 			Glyphs.defaults["com.$4.$3.popup_1"] = self.w.popup_1.get()
+			return True
 		except:
+			import traceback
+			print(traceback.format_exc())
 			return False
-			
-		return True
 
 	def LoadPreferences( self ):
 		try:
+			# register defaults:
 			Glyphs.registerDefault("com.$4.$3.popup_1", 0)
-			self.w.popup_1.set( Glyphs.defaults["com.$4.$3.popup_1"] )
-		except:
-			return False
 			
-		return True
+			# load previously written prefs:
+			self.w.popup_1.set( Glyphs.defaults["com.$4.$3.popup_1"] )
+			return True
+		except:
+			import traceback
+			print(traceback.format_exc())
+			return False
 
-	def ${5:$3Main}( self, sender ):
+	def ${5:$3Main}( self, sender=None ):
 		try:
+			# clear macro window log:
+			Glyphs.clearLog()
+			
 			# update settings to the latest user input:
-			if not self.SavePreferences( self ):
+			if not self.SavePreferences():
 				print("Note: '$1' could not write preferences.")
 			
 			thisFont = Glyphs.font # frontmost font
-			if not thisFont:
+			if thisFont is None:
 				Message(title="No Font Open", message="The script requires a font. Open a font and run the script again.", OKButton=None)
 			else:
 				print("$1 Report for %s" % thisFont.familyName)
@@ -92,7 +101,15 @@ class ${3:${1/ //g}}( object ):
 				$0
 			
 	${6:			self.w.close() # delete if you want window to stay open
-}		except Exception as e:
+}
+			# Final report:
+			Glyphs.showNotification( 
+				u"%s: Done" % (thisFont.familyName),
+				u"$1 is finished. Details in Macro Window",
+				)
+			print("\nDone.")
+
+		except Exception as e:
 			# brings macro window to front and reports error:
 			Glyphs.showMacroWindow()
 			print("$1 Error: %s" % e)
