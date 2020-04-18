@@ -3,7 +3,8 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>def ${1:fname}( ${2:`if [ "$TM_CURRENT_LINE" != "" ]
+	<string>@objc.python_method
+def ${1:fname}( ${2:`if [ "$TM_CURRENT_LINE" != "" ]
 				# poor man's way ... check if there is an indent or not
 				# (cuz we would have lost the class scope by this point)
 				then
