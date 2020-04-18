@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>from __future__ import division, print_function, unicode_literals
+$0</string>
+	<key>name</key>
+	<string>py future imports</string>
+	<key>tabTrigger</key>
+	<string>fut</string>
+	<key>uuid</key>
+	<string>4D66C425-84C1-42D7-A734-7151EF8422AF</string>
+</dict>
+</plist>
