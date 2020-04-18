@@ -37,8 +37,9 @@ These are text editor snippets intended to facilitate Python (both 2 and 3) deve
 * `intersect⇥` Intersect GSPath objects.
 * `timer⇥` Method for taking and reporting elapsed time.
 * `notification⇥` Display a floating notification in top right corner of screen.
-* `write` Method *saveFileInLocation()* for writing UTF-8 string into a new file.
-* `keys` NSEvent algorithm for determining which modifier keys are pressed by the user.
+* `write⇥` Method *saveFileInLocation()* for writing UTF-8 string into a new file.
+* `keys⇥` NSEvent algorithm for determining which modifier keys are pressed by the user.
+* `g23⇥` A try/except clause for compatibility with Glyphs 2 and 3.
 
 #### Vanilla-specific snippets
 
@@ -54,6 +55,7 @@ These are text editor snippets intended to facilitate Python (both 2 and 3) deve
 
 #### Plugin SDK-specific snippets
 
+* `dec⇥` Decorators.
 * `rgb⇥` NSColor object with RGB definition.
 * `plugindef⇥` Function definition structure better suited for the Plugin SDK.
 * `log⇥` Log a message to the console.

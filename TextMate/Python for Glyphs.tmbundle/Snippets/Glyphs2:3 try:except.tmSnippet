@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>try:
+	# GLYPHS 3
+	${1:$TM_SELECTED_TEXT}
+except:
+	# GLYPHS 2
+	${2:$TM_SELECTED_TEXT}
+$0</string>
+	<key>keyEquivalent</key>
+	<string>^~@G</string>
+	<key>name</key>
+	<string>Glyphs2/3 try/except</string>
+	<key>tabTrigger</key>
+	<string>g23</string>
+	<key>uuid</key>
+	<string>638A98AB-F9D5-494A-81A6-62509B3E8A7B</string>
+</dict>
+</plist>

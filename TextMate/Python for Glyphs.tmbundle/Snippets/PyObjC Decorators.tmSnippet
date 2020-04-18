@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>${1|@objc.python_method,@IBAction,@IBOutlet|}$0</string>
+	<key>name</key>
+	<string>PyObjC Decorators</string>
+	<key>tabTrigger</key>
+	<string>dec</string>
+	<key>uuid</key>
+	<string>AF2326C0-21FD-4747-8D59-3DB45C6EFFB1</string>
+</dict>
+</plist>
