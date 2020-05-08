@@ -104,8 +104,8 @@ class ${3:${1/ //g}}( object ):
 }
 			# Final report:
 			Glyphs.showNotification( 
-				u"%s: Done" % (thisFont.familyName),
-				u"$1 is finished. Details in Macro Window",
+				"%s: Done" % (thisFont.familyName),
+				"$1 is finished. Details in Macro Window",
 				)
 			print("\nDone.")
 

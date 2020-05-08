@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>self.w.${1:descriptionText} = vanilla.TextBox( (${2:inset}, linePos+2, ${3:-$2}, 14), u"${4:Apply function to the font}", sizeStyle='small', selectable=True )
+	<string>self.w.${1:descriptionText} = vanilla.TextBox( (${2:inset}, linePos+2, ${3:-$2}, 14), "${4:Apply function to the font}", sizeStyle='small', selectable=True )
 ${5:linePos += lineHeight
 }$0</string>
 	<key>name</key>

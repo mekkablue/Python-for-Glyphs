@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>self.w.${1:popupButton} = vanilla.PopUpButton( (${2:inset+${3:100}}, linePos, ${4:-inset}, 17), ${5:(u"Option 1", u"Option 2")}, sizeStyle='small', callback=self.SavePreferences )
+	<string>self.w.${1:popupButton} = vanilla.PopUpButton( (${2:inset+${3:100}}, linePos, ${4:-inset}, 17), ${5:("Option 1", "Option 2")}, sizeStyle='small', callback=self.SavePreferences )
 ${6:linePos += lineHeight
 }$0
 </string>
