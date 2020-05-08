@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>self.keyboardShortcut = '$1'
+self.keyboardShortcutModifier = ${2:NSShiftKeyMask | }${3:NSControlKeyMask | }${4:NSAlternateKeyMask | }${5:NSCommandKeyMask}$0
+</string>
+	<key>name</key>
+	<string>Glyphs plugin keyboard shortcut</string>
+	<key>tabTrigger</key>
+	<string>key</string>
+	<key>uuid</key>
+	<string>FB9F3769-FC13-4E14-9BCA-50DCF4944E4A</string>
+</dict>
+</plist>

@@ -58,9 +58,11 @@ These are text editor snippets intended to facilitate Python (both 2 and 3) deve
 
 * `dec⇥` Decorators.
 * `rgb⇥` NSColor object with RGB definition.
-* `plugindef⇥` Function definition structure better suited for the Plugin SDK.
+* `plugindef⇥` Function definition structure better suited for the [Plugin SDK](https://github.com/schriftgestalt/GlyphsSDK/).
 * `log⇥` Log a message to the console.
-* `url⇥` Prefill the *productPageURL* or *updateFeedURL* entry of a plugin’s *Info.plist* with a GitHub URL.
+* `url⇥` Prefill the *productPageURL* or *updateFeedURL* entry of a plug-in’s *Info.plist* with a GitHub URL.
+* `key⇥` Dedine a keyboard shortcut for a plug-in, including the modifier keys.
+* `cond⇥` Inserts the `conditionsAreMetForDrawing()` method for [Reporter plug-ins](https://github.com/schriftgestalt/GlyphsSDK/tree/master/Python%20Templates/Reporter). It will return `False` if the user is in text mode or switched to the Hand tool (H).
 
 ### Installation
 
