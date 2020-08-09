@@ -34,16 +34,22 @@ ${5:selection = selectedLayers[0].selection # node selection in edit mode
 }Glyphs.clearLog() # clears log in Macro window
 
 ${6:thisFont.disableUpdateInterface() # suppresses UI updates in Font View
- 
-}for thisLayer in selectedLayers:
-	thisGlyph = thisLayer.parent
-	print("Processing %s" % thisGlyph.name)
-${7:	thisGlyph.beginUndo() # begin undo grouping
-}	process( thisLayer )
-${8:	thisGlyph.endUndo()   # end undo grouping
-}
-${9:
-thisFont.enableUpdateInterface() # re-enables UI updates in Font View}
+}try:
+	for thisLayer in selectedLayers:
+		thisGlyph = thisLayer.parent
+		print("Processing %s" % thisGlyph.name)
+${7:		thisGlyph.beginUndo() # begin undo grouping
+}		process( thisLayer )
+${8:		thisGlyph.endUndo()   # end undo grouping
+}except Exception as e:
+	Glyphs.showMacroWindow()
+	print("\n⚠️ Error in script: $1\n")
+	import traceback
+	print(traceback.format_exc())
+	print()
+	raise e
+${9:finally:
+	thisFont.enableUpdateInterface() # re-enables UI updates in Font View}
 </string>
 	<key>name</key>
 	<string>Glyphs py</string>
