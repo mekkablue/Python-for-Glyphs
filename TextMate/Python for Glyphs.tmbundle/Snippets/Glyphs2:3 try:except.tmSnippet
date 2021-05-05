@@ -3,17 +3,17 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>try:
+	<string>if Glyphs.versionNumber >= 3:
 	# GLYPHS 3
 	${1:$TM_SELECTED_TEXT}
-except:
+else:
 	# GLYPHS 2
 	${2:$TM_SELECTED_TEXT}
 $0</string>
 	<key>keyEquivalent</key>
 	<string>^~@G</string>
 	<key>name</key>
-	<string>Glyphs2/3 try/except</string>
+	<string>Glyphs2/3 compatibility</string>
 	<key>tabTrigger</key>
 	<string>g23</string>
 	<key>uuid</key>

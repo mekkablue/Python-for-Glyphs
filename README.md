@@ -39,7 +39,7 @@ These are text editor snippets intended to facilitate Python (both 2 and 3) deve
 * `notification⇥` Display a floating notification in top right corner of screen.
 * `write⇥` Method *saveFileInLocation()* for writing UTF-8 string into a new file.
 * `keys⇥` NSEvent algorithm for determining which modifier keys are pressed by the user.
-* `g23⇥` A try/except clause for compatibility with Glyphs 2 and 3.
+* `g23⇥` A if statement for compatibility with Glyphs 2 and 3.
 * `fut⇥` The *from future* imports for Glyphs 2/3 and Python 2/3 compatibility.
 * `update⇥` Send an interface update notification to the Notification Center. Only use this to force a UI update if Glyphs does not redraw as it should.
 
