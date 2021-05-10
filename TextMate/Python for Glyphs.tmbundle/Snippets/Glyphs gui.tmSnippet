@@ -13,6 +13,8 @@ ${2:Create effect for selected glyphs.}
 import vanilla
 
 class ${3:${1/ //g}}( object ):
+	prefID = "com.${4:mekkablue}.$3"
+	
 	def __init__( self ):
 		# Window 'self.w':
 		windowWidth  = 350
@@ -24,7 +26,7 @@ class ${3:${1/ //g}}( object ):
 			"$1", # window title
 			minSize = ( windowWidth, windowHeight ), # minimum size (for resizing)
 			maxSize = ( windowWidth + windowWidthResize, windowHeight + windowHeightResize ), # maximum size (for resizing)
-			autosaveName = "com.${4:mekkablue}.$3.mainwindow" # stores last window position and size
+			autosaveName = self.domain("mainwindow") # stores last window position and size
 		)
 		
 		# UI elements:
@@ -45,11 +47,19 @@ class ${3:${1/ //g}}( object ):
 		# Open window and focus on it:
 		self.w.open()
 		self.w.makeKey()
-		
+	
+	def domain(prefName):
+		prefName = prefName.strip().strip(".")
+		return self.prefID + "." + prefName.strip()
+	
+	def pref(prefName):
+		prefDomain = self.domain(prefName)
+		return Glyphs.defaults[prefDomain]
+	
 	def SavePreferences( self, sender=None ):
 		try:
 			# write current settings into prefs:
-			Glyphs.defaults["com.$4.$3.popup_1"] = self.w.popup_1.get()
+			Glyphs.defaults[self.domain("popup_1")] = self.w.popup_1.get()
 			return True
 		except:
 			import traceback
@@ -62,7 +72,7 @@ class ${3:${1/ //g}}( object ):
 			Glyphs.registerDefault("com.$4.$3.popup_1", 0)
 			
 			# load previously written prefs:
-			self.w.popup_1.set( Glyphs.defaults["com.$4.$3.popup_1"] )
+			self.w.popup_1.set( self.pref("popup_1") )
 			return True
 		except:
 			import traceback
