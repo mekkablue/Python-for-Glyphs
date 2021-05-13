@@ -48,11 +48,11 @@ class ${3:${1/ //g}}( object ):
 		self.w.open()
 		self.w.makeKey()
 	
-	def domain(prefName):
+	def domain(self, prefName):
 		prefName = prefName.strip().strip(".")
 		return self.prefID + "." + prefName.strip()
 	
-	def pref(prefName):
+	def pref(self, prefName):
 		prefDomain = self.domain(prefName)
 		return Glyphs.defaults[prefDomain]
 	
@@ -69,7 +69,7 @@ class ${3:${1/ //g}}( object ):
 	def LoadPreferences( self ):
 		try:
 			# register defaults:
-			Glyphs.registerDefault("com.$4.$3.popup_1", 0)
+			Glyphs.registerDefault(self.domain("popup_1"), 0)
 			
 			# load previously written prefs:
 			self.w.popup_1.set( self.pref("popup_1") )
