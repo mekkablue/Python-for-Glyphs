@@ -20,11 +20,11 @@ def process( thisLayer ):
 		else:
 			print("- open path:")
 		for thisNode in thisPath.nodes:
-			print("-- node %.1f %.1f (type %s)" % ( thisNode.x, thisNode.y, thisNode.type ))
+			print(f"-- node {thisNode.x:.1f} {thisNode.y:.1f} (type {thisNode.type})")
 	for thisComponent in thisLayer.components:
-		print("- component %s at %.1f %.1f" % ( thisComponent.componentName, thisComponent.position.x, thisComponent.position.y ))
+		print(f"- component {thisComponent.componentName} at {thisComponent.position.x:.1f} {thisComponent.position.y:.1f}")
 	for thisAnchor in thisLayer.anchors:
-		print("- anchor %s at %.1f %.1f" % ( thisAnchor.name, thisAnchor.x, thisAnchor.y ))
+		print(f"- anchor {thisAnchor.name} at {thisAnchor.x:.1f} {thisAnchor.y:.1f}")
 	$0
 
 thisFont = Glyphs.font # frontmost font
@@ -37,9 +37,9 @@ ${6:thisFont.disableUpdateInterface() # suppresses UI updates in Font View
 }try:
 	for thisLayer in selectedLayers:
 		thisGlyph = thisLayer.parent
-		print("Processing %s" % thisGlyph.name)
+		print(f"Processing {thisGlyph.name}")
 ${7:		thisGlyph.beginUndo() # begin undo grouping
-}		process( thisLayer )
+}		process(thisLayer)
 ${8:		thisGlyph.endUndo()   # end undo grouping
 }except Exception as e:
 	Glyphs.showMacroWindow()

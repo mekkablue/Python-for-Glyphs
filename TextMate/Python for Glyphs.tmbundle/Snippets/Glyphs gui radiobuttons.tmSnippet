@@ -3,8 +3,8 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>radioOptions = ( ${1:"Option 1", "Option 2", "Option 3"} )
-self.w.${2:radioButtons} = vanilla.RadioGroup( (inset${3:*2}, linePos, -inset, lineHeight*len(radioOptions) ), radioOptions, callback=self.SavePreferences, sizeStyle = 'small' )
+	<string>radioOptions = (${1:"Option 1", "Option 2", "Option 3"})
+self.w.${2:radioButtons} = vanilla.RadioGroup((inset${3:*2}, linePos, -inset, lineHeight*len(radioOptions)), radioOptions, callback=self.SavePreferences, sizeStyle="small")
 self.w.$2.set( 0 )
 ${4:linePos += lineHeight*len(radioOptions)}$0
 </string>

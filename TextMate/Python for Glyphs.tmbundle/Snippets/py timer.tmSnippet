@@ -7,13 +7,13 @@
 
 def reportTimeInNaturalLanguage( seconds ):
 	if seconds &gt; 60.0:
-		timereport = "%i:%02i minutes" % ( seconds//60, seconds%60 )
+		timereport = "{seconds//60}:{seconds%60:02i} minutes"
 	elif seconds &lt; 1.0:
-		timereport = "%.2f seconds" % seconds
+		timereport = "{seconds:.2f} seconds"
 	elif seconds &lt; 20.0:
-		timereport = "%.1f seconds" % seconds
+		timereport = "{seconds:.1f} seconds"
 	else:
-		timereport = "%i seconds" % seconds
+		timereport = "{seconds} seconds"
 	return timereport
 
 ${2:# start taking time:
@@ -21,8 +21,8 @@ start = timer()
 
 # take time:
 end = timer()
-timereport = reportTimeInNaturalLanguage( end - start )
-${1:print("Time elapsed: %s." % timereport)}
+timereport = reportTimeInNaturalLanguage(end - start)
+${1:print("Time elapsed: {timereport}.")}
 }$0</string>
 	<key>name</key>
 	<string>py timer</string>

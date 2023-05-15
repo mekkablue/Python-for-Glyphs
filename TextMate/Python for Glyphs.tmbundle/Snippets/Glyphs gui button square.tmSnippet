@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>self.w.${1:updateButton} = vanilla.SquareButton( (${2:-inset-20}, linePos, ${3:-inset}, 18), "${4:↺}", sizeStyle='small', callback=self.${5:update} )
+	<string>self.w.${1:updateButton} = vanilla.SquareButton((${2:-inset-20}, linePos, ${3:-inset}, 18), "${4:↺}", sizeStyle="small", callback=self.${5:update})
 ${6:linePos += lineHeight
 }$0</string>
 	<key>name</key>

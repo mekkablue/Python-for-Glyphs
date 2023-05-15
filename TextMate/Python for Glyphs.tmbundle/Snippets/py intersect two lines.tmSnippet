@@ -5,7 +5,7 @@
 	<key>content</key>
 	<string>${1:from Foundation import NSPoint
 }
-def intersect( pointA, pointB, pointC, pointD ):
+def intersect(pointA, pointB, pointC, pointD):
 	"""
 	Returns an NSPoint of the intersection AB with CD,
 	or None if there is no intersection.
@@ -18,12 +18,12 @@ def intersect( pointA, pointB, pointC, pointD ):
 	xD, yD = pointD.x, pointD.y
 	
 	try:
-		slopeAB = ( float(yB) - float(yA) ) / ( float(xB) - float(xA) )
+		slopeAB = (float(yB) - float(yA)) / (float(xB) - float(xA))
 	except:
 		slopeAB = None # division by zero if vertical
 	
 	try:
-		slopeCD = ( float(yD) - float(yC) ) / ( float(xD) - float(xC) )
+		slopeCD = (float(yD) - float(yC)) / (float(xD) - float(xC))
 	except:
 		slopeCD = None # division by zero if vertical
 	
@@ -31,15 +31,15 @@ def intersect( pointA, pointB, pointC, pointD ):
 		return None
 	elif slopeAB is None: # first line is vertical
 		x = xA
-		y = slopeCD * ( x - xC ) + yC
+		y = slopeCD * (x - xC) + yC
 	elif slopeCD is None: # second line is vertical
 		x = xC
-		y = slopeAB * ( x - xA ) + yA
+		y = slopeAB * (x - xA) + yA
 	else: # both lines have different angles other than vertical
-		x = ( slopeAB * xA - yA - slopeCD * xC + yC ) / ( slopeAB - slopeCD )
-		y = slopeAB * ( x - xA ) + yA
+		x = (slopeAB * xA - yA - slopeCD * xC + yC) / (slopeAB - slopeCD)
+		y = slopeAB * (x - xA) + yA
 		
-	return NSPoint( x, y )
+	return NSPoint(x, y)
 $0</string>
 	<key>name</key>
 	<string>py intersect two lines</string>

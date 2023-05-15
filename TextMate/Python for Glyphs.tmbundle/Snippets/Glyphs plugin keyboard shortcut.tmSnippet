@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>self.keyboardShortcut = '$1'
+	<string>self.keyboardShortcut = "$1"
 self.keyboardShortcutModifier = ${2:NSShiftKeyMask | }${3:NSControlKeyMask | }${4:NSAlternateKeyMask | }${5:NSCommandKeyMask}$0
 </string>
 	<key>name</key>

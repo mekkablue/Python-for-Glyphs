@@ -5,7 +5,7 @@
 	<key>content</key>
 	<string>import random
 random.seed()
-${1:randomNumber = random.randint( -100, 100 )
+${1:randomNumber = random.randint(-100, 100)
 }$0</string>
 	<key>name</key>
 	<string>py random</string>

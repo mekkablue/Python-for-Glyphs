@@ -10,7 +10,7 @@ __doc__="""
 Opens a new Edit tab containing all glyphs ${2:exceeding the ascender height.}
 """
 
-def isLayerAffected( thisLayer ):
+def isLayerAffected(thisLayer):
 	ascender = thisLayer.master.ascender
 	for thisPath in thisLayer.paths:
 		for thisNode in thisPath.nodes:
@@ -23,9 +23,9 @@ thisFont = Glyphs.font # frontmost font
 affectedLayers = []
 for thisGlyph in thisFont.glyphs: # loop through all glyphs
 	for thisLayer in thisGlyph.layers: # loop through all layers
-		print("Analysing %s" % thisGlyph.name) # report status in Macro window
+		print("Analysing {thisGlyph.name}") # report status in Macro window
 		# collect affected layers:
-		if isLayerAffected( thisLayer ): 
+		if isLayerAffected(thisLayer): 
 			affectedLayers.append(thisLayer)
 
 # open a new tab with the affected layers:

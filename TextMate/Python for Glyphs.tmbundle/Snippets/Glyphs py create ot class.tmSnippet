@@ -3,12 +3,12 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>def createOTClass( className   = "@default", 
-                   classGlyphs = [ l.parent.name for l in Glyphs.font.selectedLayers ], 
-                   targetFont  = Glyphs.font ):
+	<string>def createOTClass(className   = "@default", 
+                  classGlyphs = [l.parent.name for l in Glyphs.font.selectedLayers], 
+                  targetFont  = Glyphs.font):
 	"""
 	Creates an OpenType class called className in targetFont 
-	containg classGlyphs, or updates it if it already exists.
+	containing classGlyphs, or updates it if it already exists.
 	className: name of the OT class, with or without leading at sign,
 	classGlyphs: list of glyph names,
 	targetFont: the GSFont that receives the OT class.
@@ -18,17 +18,17 @@
 	if className[0] == "@":
 		className = className[1:]
 	
-	classCode = " ".join( classGlyphs )
+	classCode = " ".join(classGlyphs)
 	
-	if className in [ c.name for c in targetFont.classes ]:
+	if className in [c.name for c in targetFont.classes]:
 		targetFont.classes[className].code = classCode
-		return "Updated existing OT class '%s'." % className
+		return "Updated existing OT class ‘{className}’."
 	else:
 		newClass = GSClass()
 		newClass.name = className
 		newClass.code = classCode
-		targetFont.classes.append( newClass )
-		return "Created new OT class: '%s'" % className
+		targetFont.classes.append(newClass)
+		return "Created new OT class: ‘{className}’"
 
 $0</string>
 	<key>name</key>

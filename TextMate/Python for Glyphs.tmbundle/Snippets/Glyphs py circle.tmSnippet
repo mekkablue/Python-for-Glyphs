@@ -19,8 +19,8 @@ def circlePath( center=NSPoint(0,0), radius=50, bcp=4.0*(2.0**0.5-1.0)/3.0 ):
 	# Add the segments:
 	for triplet in points:
 		# Add the two BCPs of the segment:
-		bcp1 = NSPoint( triplet[0][0], triplet[0][1] )
-		bcp2 = NSPoint( triplet[1][0], triplet[1][1] )
+		bcp1 = NSPoint(triplet[0][0], triplet[0][1])
+		bcp2 = NSPoint(triplet[1][0], triplet[1][1])
 		for bcpPosition in (bcp1,bcp2):
 			newBCP = GSNode()
 			newBCP.type = OFFCURVE
@@ -31,7 +31,7 @@ def circlePath( center=NSPoint(0,0), radius=50, bcp=4.0*(2.0**0.5-1.0)/3.0 ):
 		newCurvepoint = GSNode()
 		newCurvepoint.type = CURVE
 		newCurvepoint.smooth = True
-		newCurvepoint.position  = NSPoint( triplet[2][0], triplet[2][1] )
+		newCurvepoint.position  = NSPoint(triplet[2][0], triplet[2][1])
 		circle.nodes.append(newCurvepoint)
 		
 	circle.closed = True

@@ -3,14 +3,14 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>self.w.${1:descriptionText} = vanilla.TextBox((${2:inset}, linePos+2, ${3:-$2}, 14), "${4:Apply function to the font}", sizeStyle="small", selectable=True)
+	<string>self.w.${1:comboBox} = vanilla.ComboBox((${2:inset}, linePos-1, ${3:-$2}, 19), ${4:[g.name for g in Glyphs.font.glyphs]}, sizeStyle="small", callback=self.SavePreferences)
 ${5:linePos += lineHeight
 }$0</string>
 	<key>name</key>
-	<string>Glyphs gui text box</string>
+	<string>Glyphs gui combo box</string>
 	<key>tabTrigger</key>
-	<string>text</string>
+	<string>combo</string>
 	<key>uuid</key>
-	<string>5BA43232-D3E7-42D6-8744-2A87A8193192</string>
+	<string>FDC049BA-634A-4878-B29D-6B7507E371D1</string>
 </dict>
 </plist>

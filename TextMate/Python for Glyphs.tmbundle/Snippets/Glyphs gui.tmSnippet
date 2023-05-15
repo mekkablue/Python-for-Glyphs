@@ -10,10 +10,14 @@ __doc__="""
 ${2:Create effect for selected glyphs.}
 """
 
-import vanilla
+import vanilla, sys
 
-class ${3:${1/ //g}}( object ):
+class ${3:${1/ //g}}(object):
 	prefID = "com.${4:mekkablue}.$3"
+	prefDict = {
+		# "prefName": defaultValue,
+		"popup_1": 0,
+	}
 	
 	def __init__( self ):
 		# Window 'self.w':
@@ -24,25 +28,25 @@ class ${3:${1/ //g}}( object ):
 		self.w = vanilla.FloatingWindow(
 			( windowWidth, windowHeight ), # default window size
 			"$1", # window title
-			minSize = ( windowWidth, windowHeight ), # minimum size (for resizing)
-			maxSize = ( windowWidth + windowWidthResize, windowHeight + windowHeightResize ), # maximum size (for resizing)
+			minSize = (windowWidth, windowHeight), # minimum size (for resizing)
+			maxSize = (windowWidth + windowWidthResize, windowHeight + windowHeightResize), # maximum size (for resizing)
 			autosaveName = self.domain("mainwindow") # stores last window position and size
 		)
 		
 		# UI elements:
 		linePos, inset, lineHeight = 12, 15, 22
-		self.w.text_1 = vanilla.TextBox( (inset-1, linePos+2, 75, 14), "inset", sizeStyle='small' )
-		self.w.popup_1 = vanilla.PopUpButton( (inset+80, linePos, 50, 17), [str(x) for x in range( 3, 12 )], callback=self.SavePreferences, sizeStyle='small' )
-		self.w.edit_1 = vanilla.EditText( (inset+80+55, linePos, -inset, 19), "insert text here", sizeStyle='small', callback=self.SavePreferences)
+		self.w.text_1 = vanilla.TextBox((inset-1, linePos+2, 75, 14), "inset", sizeStyle="small")
+		self.w.popup_1 = vanilla.PopUpButton((inset+80, linePos, 50, 17), [str(x) for x in range( 3, 12 )], callback=self.SavePreferences, sizeStyle="small")
+		self.w.edit_1 = vanilla.EditText((inset+80+55, linePos, -inset, 19), "insert text here", sizeStyle="small", callback=self.SavePreferences)
 		linePos += lineHeight
 		
 		# Run Button:
-		self.w.runButton = vanilla.Button( (-80-inset, -20-inset, -inset, -inset), "Run", sizeStyle='regular', callback=self.$5 )
-		self.w.setDefaultButton( self.w.runButton )
+		self.w.runButton = vanilla.Button((-80-inset, -20-inset, -inset, -inset), "Run", sizeStyle="regular", callback=self.$5)
+		self.w.setDefaultButton(self.w.runButton)
 		
 		# Load Settings:
 		if not self.LoadPreferences():
-			print("Note: '$1' could not load preferences. Will resort to defaults")
+			print("⚠️ ‘$1’ could not load preferences. Will resort to defaults.")
 		
 		# Open window and focus on it:
 		self.w.open()
@@ -56,10 +60,11 @@ class ${3:${1/ //g}}( object ):
 		prefDomain = self.domain(prefName)
 		return Glyphs.defaults[prefDomain]
 	
-	def SavePreferences( self, sender=None ):
+	def SavePreferences(self, sender=None):
 		try:
 			# write current settings into prefs:
-			Glyphs.defaults[self.domain("popup_1")] = self.w.popup_1.get()
+			for prefName in self.prefDict.keys():
+				Glyphs.defaults[self.domain(prefName)] = getattr(self.w, prefName).get()
 			return True
 		except:
 			import traceback
@@ -68,11 +73,11 @@ class ${3:${1/ //g}}( object ):
 
 	def LoadPreferences( self ):
 		try:
-			# register defaults:
-			Glyphs.registerDefault(self.domain("popup_1"), 0)
-			
-			# load previously written prefs:
-			self.w.popup_1.set( self.pref("popup_1") )
+			for prefName in self.prefDict.keys():
+				# register defaults:
+				Glyphs.registerDefault(self.domain(prefName), self.prefDict[prefName])
+				# load previously written prefs:
+				getattr(self.w, prefName).set(self.pref(prefName))
 			return True
 		except:
 			import traceback
@@ -86,17 +91,27 @@ class ${3:${1/ //g}}( object ):
 			
 			# update settings to the latest user input:
 			if not self.SavePreferences():
-				print("Note: '$1' could not write preferences.")
+				print("⚠️ ‘$1’ could not write preferences.")
+			
+			# read prefs:
+			for prefName in self.prefDict.keys():
+				try:
+					setattr(sys.modules[__name__], prefName, self.pref(prefName))
+				except:
+					fallbackValue = self.prefDict[prefName]
+					print(f"⚠️ Could not set pref ‘{prefName}’, resorting to default value: ‘{fallbackValue}’.")
+					setattr(sys.modules[__name__], prefName, fallbackValue)
 			
 			thisFont = Glyphs.font # frontmost font
 			if thisFont is None:
 				Message(title="No Font Open", message="The script requires a font. Open a font and run the script again.", OKButton=None)
 			else:
-				print("$1 Report for %s" % thisFont.familyName)
-				if thisFont.filepath:
-					print(thisFont.filepath)
+				filePath = thisFont.filepath
+				if filePath:
+					report = f"{filePath.lastPathComponent()}\n📄 {filePath}"
 				else:
-					print("⚠️ The font file has not been saved yet.")
+					report = f"{thisFont.familyName}\n⚠️ The font file has not been saved yet."
+				print("$1 Report for {report}")
 				print()
 			
 				${7:listOfSelectedLayers = thisFont.selectedLayers # active layers of currently selected glyphs
@@ -106,23 +121,18 @@ class ${3:${1/ //g}}( object ):
 					# output all node coordinates:
 					for thisPath in thisLayer.paths:
 						for thisNode in thisLayer.nodes:
-							print("-- %.1f %.1f" % ( thisNode.x, thisNode.y ))
+							print(f"-- {thisNode.x:.1f} {thisNode.y:.1f}")
 				}
 				$0
 			
 	${6:			self.w.close() # delete if you want window to stay open
 }
-			# Final report:
-			Glyphs.showNotification( 
-				"%s: Done" % (thisFont.familyName),
-				"$1 is finished. Details in Macro Window",
-				)
 			print("\nDone.")
 
 		except Exception as e:
 			# brings macro window to front and reports error:
 			Glyphs.showMacroWindow()
-			print("$1 Error: %s" % e)
+			print(f"$1 Error: {e}")
 			import traceback
 			print(traceback.format_exc())
 

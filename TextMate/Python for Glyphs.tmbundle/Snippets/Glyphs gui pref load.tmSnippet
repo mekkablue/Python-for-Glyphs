@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>self.w.${1:itemName}.set( Glyphs.defaults["com.${2:mekkablue}.${3:mainClassName}.$1"] )$0</string>
+	<string>self.w.${1:itemName}.set(self.pref("$1"))$0</string>
 	<key>name</key>
 	<string>Glyphs gui pref load</string>
 	<key>tabTrigger</key>

@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>self.w.${1:textEntry} = vanilla.EditText( (${2:inset${3:+80}}, linePos, ${4:-inset}, 19), "${5:insert text here}", callback=self.SavePreferences, sizeStyle='small' )
+	<string>self.w.${1:textEntry} = vanilla.EditText((${2:inset${3:+80}}, linePos, ${4:-inset}, 19), "${5:insert text here}", callback=self.SavePreferences, sizeStyle="small")
 ${6:linePos += lineHeight
 }$0
 </string>

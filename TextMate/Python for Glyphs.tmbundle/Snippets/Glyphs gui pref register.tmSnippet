@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>Glyphs.registerDefault( "com.${1:mekkablue}.${2:mainClassName}.${3:itemName}", ${4:0} )$0
+	<string>Glyphs.registerDefault(self.domain("${1:itemName}"), ${2:0})$0
 </string>
 	<key>name</key>
 	<string>Glyphs gui pref register</string>

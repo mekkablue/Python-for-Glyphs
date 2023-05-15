@@ -5,7 +5,7 @@
 	<key>content</key>
 	<string>${1:import math}
 
-def angle( firstPoint, secondPoint ):
+def angle(firstPoint, secondPoint):
 	"""
 	Returns the angle (in degrees) of the straight line between firstPoint and secondPoint,
 	0 degrees being the second point to the right of first point.
@@ -13,7 +13,7 @@ def angle( firstPoint, secondPoint ):
 	"""
 	xDiff = secondPoint.x - firstPoint.x
 	yDiff = secondPoint.y - firstPoint.y
-	return math.degrees(math.atan2(yDiff,xDiff))
+	return math.degrees(math.atan2(yDiff, xDiff))
 $0</string>
 	<key>name</key>
 	<string>Glyphs py angle</string>

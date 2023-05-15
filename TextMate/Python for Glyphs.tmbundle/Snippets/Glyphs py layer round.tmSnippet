@@ -5,7 +5,7 @@
 	<key>content</key>
 	<string>${1:from Foundation import NSClassFromString}
 
-def roundLayer( thisLayer, radius, checkSelection=False, visualCorrection=True, respectGrid=False ):
+def roundLayer(thisLayer, radius, checkSelection=False, visualCorrection=True, respectGrid=False):
 	roundFilter = NSClassFromString("GlyphsFilterRoundCorner")
 	roundFilter.roundLayer_radius_checkSelection_visualCorrect_grid_(
 		thisLayer, radius,

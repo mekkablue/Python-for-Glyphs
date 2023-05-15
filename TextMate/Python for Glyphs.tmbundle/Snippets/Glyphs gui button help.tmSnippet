@@ -3,13 +3,15 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>Glyphs.defaults[self.domain("${1:itemName}")] = self.w.$1.get()$0
+	<string>self.w.${1:helpButton} = vanilla.HelpButton((${2:inset+${3:100}}, linePos, 21, 21), callback=self.${4:openURL})
+${5:linePos += lineHeight
+}$0
 </string>
 	<key>name</key>
-	<string>Glyphs gui pref save</string>
+	<string>Glyphs gui button help</string>
 	<key>tabTrigger</key>
-	<string>pref</string>
+	<string>button</string>
 	<key>uuid</key>
-	<string>4E5AE413-E026-44AE-B5AC-6169EF6056BC</string>
+	<string>BBCDD180-BDAE-4D73-B812-8F4DC9CA6DD2</string>
 </dict>
 </plist>

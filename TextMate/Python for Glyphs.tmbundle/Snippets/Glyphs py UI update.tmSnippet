@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>${1:from AppKit import NSNotificationCenter}
+if ${2:Glyphs.versionNumber&gt;=3 and }${3:Glyphs.font} and $3.currentTab:
+	NSNotificationCenter.defaultCenter().postNotificationName_object_("GSUpdateInterface", $3.currentTab)
+$0</string>
+	<key>name</key>
+	<string>Glyphs py UI update</string>
+	<key>tabTrigger</key>
+	<string>update</string>
+	<key>uuid</key>
+	<string>9E641F44-77F1-44E9-9BA4-B3805ED59F60</string>
+</dict>
+</plist>

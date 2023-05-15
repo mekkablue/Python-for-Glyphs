@@ -5,8 +5,8 @@
 	<key>content</key>
 	<string># Floating notification:
 Glyphs.showNotification( 
-	"%s$1" % (thisFont.familyName$2),
-	${4:"${3:Script is finished.}",}
+	"$1{thisFont.familyName$1}",
+	${3:"${2:Script is finished.}",}
 	)$0
 </string>
 	<key>name</key>

@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>self.logToConsole( "${1:method name}: %s" % str(e) )$0</string>
+	<string>self.logToConsole(f"${1:method name}: {str(e)}")$0</string>
 	<key>name</key>
 	<string>Glyphs plugin log</string>
 	<key>tabTrigger</key>

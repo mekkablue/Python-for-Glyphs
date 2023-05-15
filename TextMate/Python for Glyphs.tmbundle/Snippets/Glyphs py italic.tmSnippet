@@ -15,11 +15,11 @@ def italicize( thisPoint, italicAngle=0.0, pivotalY=0.0 ):
 	"""
 	x = thisPoint.x
 	yOffset = thisPoint.y - pivotalY # calculate vertical offset
-	italicAngle = math.radians( italicAngle ) # convert to radians
-	tangens = math.tan( italicAngle ) # math.tan needs radians
+	italicAngle = math.radians(italicAngle) # convert to radians
+	tangens = math.tan(italicAngle) # math.tan needs radians
 	horizontalDeviance = tangens * yOffset # vertical distance from pivotal point
 	x += horizontalDeviance # x of point that is yOffset from pivotal point
-	return NSPoint( x, thisPoint.y )
+	return NSPoint(x, thisPoint.y)
 $0</string>
 	<key>name</key>
 	<string>Glyphs py italic</string>

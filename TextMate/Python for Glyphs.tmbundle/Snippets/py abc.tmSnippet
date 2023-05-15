@@ -3,14 +3,14 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string># Force update of interface:
-NSNotificationCenter.defaultCenter().postNotificationName_object_("GSUpdateInterface", ${1:thisFont})
+	<string>from string import ascii_uppercase, ascii_lowercase
+alphabet = ascii_uppercase+ascii_lowercase
 $0</string>
 	<key>name</key>
-	<string>Glyphs py force update</string>
+	<string>py abc</string>
 	<key>tabTrigger</key>
-	<string>update</string>
+	<string>abc</string>
 	<key>uuid</key>
-	<string>ADE90464-42AE-43F2-AD79-1DD6447CB97C</string>
+	<string>AB4509EC-47B1-4301-963C-54AFCB3E19BC</string>
 </dict>
 </plist>

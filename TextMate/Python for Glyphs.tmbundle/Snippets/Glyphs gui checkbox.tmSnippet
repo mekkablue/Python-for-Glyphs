@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>self.w.${1:myCheckBox} = vanilla.CheckBox( (${2:inset}, ${3:linePos-1}, ${4:-$2}, 20), "${5:Activate option}", value=${6|False,True|}, callback=self.SavePreferences, sizeStyle='small' )
+	<string>self.w.${1:myCheckBox} = vanilla.CheckBox((${2:inset}, ${3:linePos-1}, ${4:-$2}, 20), "${5:Activate option}", value=${6|False,True|}, callback=self.SavePreferences, sizeStyle="small")
 ${7:linePos += lineHeight
 }$0</string>
 	<key>name</key>

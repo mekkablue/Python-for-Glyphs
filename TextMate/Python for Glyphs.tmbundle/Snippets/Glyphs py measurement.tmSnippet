@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>def intersectionsBetweenPoints( thisLayer, startPoint, endPoint ):
+	<string>def intersectionsBetweenPoints(thisLayer, startPoint, endPoint):
 	"""
 	Returns list of intersection NSPoints from startPoint to endPoint.
 	thisLayer ... a glyph layer
@@ -15,7 +15,7 @@
 	cleanLayer.removeOverlap()
 	
 	# measure and return tuple:
-	listOfIntersections = cleanLayer.intersectionsBetweenPoints( startPoint, endPoint )
+	listOfIntersections = cleanLayer.intersectionsBetweenPoints(startPoint, endPoint)
 	return listOfIntersections
 $0</string>
 	<key>name</key>

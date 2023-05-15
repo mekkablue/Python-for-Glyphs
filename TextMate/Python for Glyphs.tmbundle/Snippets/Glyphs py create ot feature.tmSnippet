@@ -10,10 +10,10 @@
 	newCode = oldCode[:beginOffset] + beginSig + newCode + "\n" + endSig + oldCode[endOffset:]
 	return newCode
 
-def createOTFeature( featureName = "calt", 
-                     featureCode = "# empty feature code", 
-                     targetFont  = Glyphs.font,
-                     codeSig     = "CUSTOM-CONTEXTUAL-ALTERNATES" ):
+def createOTFeature(featureName = "calt", 
+                    featureCode = "# empty feature code", 
+                    targetFont  = Glyphs.font,
+                    codeSig     = "CUSTOM-CONTEXTUAL-ALTERNATES"):
 	"""
 	Creates or updates an OpenType feature in the font.
 	Returns a status message in form of a string.
@@ -37,14 +37,14 @@ def createOTFeature( featureName = "calt",
 			# append new code:
 			targetFeature.code += "\n" + beginSig + featureCode + "\n" + endSig
 			
-		return "Updated existing OT feature '%s'." % featureName
+		return "Updated existing OT feature ‘{featureName}’."
 	else:
 		# create feature with new code:
 		newFeature = GSFeature()
 		newFeature.name = featureName
 		newFeature.code = beginSig + featureCode + "\n" + endSig
 		targetFont.features.append( newFeature )
-		return "Created new OT feature '%s'" % featureName
+		return "Created new OT feature ‘{featureName}’"
 
 $0</string>
 	<key>name</key>

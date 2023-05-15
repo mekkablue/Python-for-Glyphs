@@ -5,21 +5,21 @@
 	<key>content</key>
 	<string>${1:from AppKit import NSPasteboard, NSStringPboardType
 }
-def setClipboard( myText ):
+def setClipboard(myText):
 	"""
 	Sets the contents of the clipboard to myText.
 	Returns True if successful, False if unsuccessful.
 	"""
 	try:
 		myClipboard = NSPasteboard.generalPasteboard()
-		myClipboard.declareTypes_owner_( [NSStringPboardType], None )
-		myClipboard.setString_forType_( myText, NSStringPboardType )
+		myClipboard.declareTypes_owner_([NSStringPboardType], None)
+		myClipboard.setString_forType_(myText, NSStringPboardType)
 		return True
 	except Exception as e:
 		return False
 
 ${2:if not setClipboard(${3:"clipboard text"}):
-	print("Warning: could not set clipboard to %s" % ( $3 )})
+	print("Warning: could not set clipboard to {$3}")
 $0</string>
 	<key>name</key>
 	<string>py clipboard</string>
