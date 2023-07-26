@@ -5,7 +5,7 @@
 	<key>content</key>
 	<string>${1:from Foundation import NSClassFromString}
 
-def offsetLayer( thisLayer, offset, makeStroke=False, position=0.5, autoStroke=False ):
+def offsetLayer(thisLayer, offset, makeStroke=False, position=0.5, autoStroke=False):
 	offsetFilter = NSClassFromString("GlyphsFilterOffsetCurve")
 	try:
 		# GLYPHS 3:	
@@ -15,7 +15,7 @@ def offsetLayer( thisLayer, offset, makeStroke=False, position=0.5, autoStroke=F
 			makeStroke,     # if True, creates a stroke
 			autoStroke,     # if True, distorts resulting shape to vertical metrics
 			position,       # stroke distribution to the left and right, 0.5 = middle
-			None, None, None, 0, 0, False )
+			None, None, None, 0, 0, False)
 	except:
 		# GLYPHS 2:
 		offsetFilter.offsetLayer_offsetX_offsetY_makeStroke_autoStroke_position_error_shadow_(
@@ -24,7 +24,7 @@ def offsetLayer( thisLayer, offset, makeStroke=False, position=0.5, autoStroke=F
 			makeStroke,     # if True, creates a stroke
 			autoStroke,     # if True, distorts resulting shape to vertical metrics
 			position,       # stroke distribution to the left and right, 0.5 = middle
-			None, None )
+			None, None)
 $0</string>
 	<key>name</key>
 	<string>Glyphs py layer offset</string>

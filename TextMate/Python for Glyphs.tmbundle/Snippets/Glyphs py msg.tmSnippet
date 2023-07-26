@@ -3,7 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>Message(title="${1:Script} Error", message="${2:An error occurred during the execution of the script.}", OKButton=${3|None,"Apply"|})$0</string>
+	<string>Message(
+	title="${1:Script Error}",
+	message="${2:An error occurred during the execution of the script.}",
+	OKButton=${3|None,"Apply"|},
+	)$0</string>
 	<key>name</key>
 	<string>Glyphs py msg</string>
 	<key>tabTrigger</key>

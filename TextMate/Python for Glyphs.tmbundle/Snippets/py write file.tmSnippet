@@ -5,10 +5,10 @@
 	<key>content</key>
 	<string>${1:import codecs
 }def saveFileInLocation(content="", fileName="test.txt", filePath="~/Desktop"):
-	saveFileLocation = "{filePath}/{fileName}"
+	saveFileLocation = f"{filePath}/{fileName}"
 	saveFileLocation = saveFileLocation.replace( "//", "/" )
 	with codecs.open(saveFileLocation, "w", "utf-8-sig") as thisFile:
-		print("Exporting to: {thisFile.name}")
+		print(f"Exporting to: {thisFile.name}")
 		thisFile.write(content)
 		thisFile.close()
 	return True

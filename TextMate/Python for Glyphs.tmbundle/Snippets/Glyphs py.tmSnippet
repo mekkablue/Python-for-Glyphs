@@ -13,7 +13,7 @@ ${3:
 import random
 random.seed()
 }
-def process( thisLayer ):
+def process(thisLayer):
 	for thisPath in thisLayer.paths:
 		if thisPath.closed:
 			print("- closed path:")

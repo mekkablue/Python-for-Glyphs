@@ -8,12 +8,25 @@
 def roundLayer(thisLayer, radius, checkSelection=False, visualCorrection=True, respectGrid=False):
 	roundFilter = NSClassFromString("GlyphsFilterRoundCorner")
 	roundFilter.roundLayer_radius_checkSelection_visualCorrect_grid_(
-		thisLayer, radius,
-		checkSelection,   # if True, only rounds user-selected points
-		visualCorrection, # visual correction of non-perpendicular angles
-		respectGrid       # whether it the resulting path should stick to the grid
+		thisLayer, # GSLayer
+		radius,    # float
+		checkSelection,   # bool: if True, only rounds user-selected points
+		visualCorrection, # bool: visual correction of non-perpendicular angles
+		respectGrid       # bool: whether it the resulting path should stick to the grid
 	)
-$0</string>
+
+def roundLayerForCompatibility(layer, radius, checkSelection=False, visualCorrect=True, keepCompatible=True, roundToGrid=False):
+	roundFilter = NSClassFromString("GlyphsFilterRoundCorner")
+	roundFilter.roundLayer_radius_checkSelection_visualCorrect_forceCompatibilty_grid_(
+		layer,  # GSLayer
+		radius, # float
+		checkSelection, # BOOL
+		visualCorrect,  # BOOL
+		keepCompatible, # BOOL
+		roundToGrid,    # BOOL
+	)
+$0
+</string>
 	<key>name</key>
 	<string>Glyphs py layer round</string>
 	<key>tabTrigger</key>
