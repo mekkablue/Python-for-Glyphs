@@ -41,7 +41,7 @@ class ${3:${1/ //g}}(${4|mekkaObject,object|}):
 		
 		# UI elements:
 		linePos, inset, lineHeight = 12, 15, 22
-		self.w.descriptionText = vanilla.TextBox((inset, linePos+2, -inset, 14), "Apply function to the font", sizeStyle="small", selectable=True)
+		self.w.descriptionText = vanilla.TextBox((inset, linePos, -inset, 14), "Apply function to the font", sizeStyle="small", selectable=True)
 		linePos += lineHeight
 		
 		# Run Button:
