@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>self.w.${1:updateButton} = vanilla.UpdateButton((${2:-inset-16}, linePos-3, ${3:-inset}, 18), callback=self.${5:updateUI})
+${6:linePos += lineHeight
+}$0
+</string>
+	<key>name</key>
+	<string>Glyphs gui button update</string>
+	<key>tabTrigger</key>
+	<string>button</string>
+	<key>uuid</key>
+	<string>048A410B-C854-4BF9-9D08-8A07F7AD5BFA</string>
+</dict>
+</plist>
