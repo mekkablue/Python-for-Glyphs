@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>self.w.${1:updateButton} = vanilla.UpdateButton((${2:-inset-16}, linePos-3, ${3:-inset}, 18), callback=self.${5:updateUI})
+	<string>self.w.${1:updateButton} = UpdateButton((${2:-inset-16}, linePos-3, ${3:-inset}, 18), callback=self.${5:updateUI})
 ${6:linePos += lineHeight
 }$0
 </string>
