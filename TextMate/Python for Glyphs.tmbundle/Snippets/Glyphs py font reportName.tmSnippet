@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>reportName = ${1:thisFont}.familyName
+if $1.filepath:
+	reportName = $1.filepath.lastPathComponent()
+</string>
+	<key>name</key>
+	<string>Glyphs py font reportName</string>
+	<key>tabTrigger</key>
+	<string>name</string>
+	<key>uuid</key>
+	<string>EE545A21-5BCD-41E0-9088-F3B572FD9210</string>
+</dict>
+</plist>

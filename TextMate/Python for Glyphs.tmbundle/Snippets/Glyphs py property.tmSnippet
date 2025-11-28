@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>def addPropertyToFont(font, key, value):
+	while font.propertyForName_(key):
+		font.removeObjectFromProperties_(font.propertyForName_(key))
+	prop = GSFontInfoValueSingle()
+	prop.key = key
+	prop.value = value
+	font.properties.append(prop)
+</string>
+	<key>name</key>
+	<string>Glyphs py property</string>
+	<key>tabTrigger</key>
+	<string>fontprop</string>
+	<key>uuid</key>
+	<string>D1BB0E2D-BE78-48B8-94B5-C8614917E3DB</string>
+</dict>
+</plist>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>def addLocalizedPropertyToFont(font, key, locDict):
+	"""
+	Usage: 
+	property = localizedProperty(font, key, locDict)
+	
+	Arguments example:
+	key = "manufacturers",
+	locDict = {
+		"dflt": "Bla",
+		"DEU": "Blablabla",
+		"ARA": "Blebleble",
+		}
+	"""
+	# remove old entries
+	while font.propertyForName_(key):
+		font.removeObjectFromProperties_(font.propertyForName_(key))
+	
+	# create new empty property
+	prop = GSFontInfoValueLocalized()
+	prop.key = key
+	
+	# if there is dflt language, add it first to property:
+	if locDict["dflt"]:
+		infoLoc = GSFontInfoValue()
+		infoLoc.languageTag = "dflt"
+		infoLoc.value = locDict["dflt"]
+		prop.values.append(infoLoc)
+	
+	# add other language entries to property:
+	for languageTag in sorted(locDict.keys()):
+		if languageTag == "dflt":
+			continue
+		infoLoc = GSFontInfoValue()
+		infoLoc.languageTag = languageTag
+		infoLoc.value = locDict[languageTag]
+		prop.values.append(infoLoc)
+	
+	# add it to the font:
+	font.properties.append(prop)
+</string>
+	<key>name</key>
+	<string>Glyphs py property localized</string>
+	<key>tabTrigger</key>
+	<string>fontprop</string>
+	<key>uuid</key>
+	<string>A7E913C5-B5E1-4466-9318-E70BD28BA92B</string>
+</dict>
+</plist>
